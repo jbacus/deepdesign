@@ -1,0 +1,1 @@
+Going through the procedural motions of an innovation process without actually doing anything innovative. Theater is practiced by teams who need to show they are doing something even if they are too afraid to step outside the safety of what they already know.

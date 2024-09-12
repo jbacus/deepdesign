@@ -1,0 +1,1 @@
+Comedy improv as an idea development practice; describe your idea to someone. They deepen the idea, and pass it to the next. Repeat five times. Use the catchphrase, "[[My idea is now your idea]]" to commemorate the handoff.

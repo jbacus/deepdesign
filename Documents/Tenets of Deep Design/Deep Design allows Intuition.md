@@ -1,0 +1,1 @@
+![[Intuition is acknowledged as a pre-linguistic way of thinking]]

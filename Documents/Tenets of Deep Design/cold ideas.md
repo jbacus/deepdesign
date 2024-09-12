@@ -1,0 +1,1 @@
+A cold idea is one which comes slowly, haltingly, over a long period of time. It is often the result of rigorous exploration and brute force methods of trial and error.

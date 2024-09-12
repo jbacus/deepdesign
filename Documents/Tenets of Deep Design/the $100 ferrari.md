@@ -1,0 +1,1 @@
+If you could have a new ferrari for only $100, wouldn’t you want one? [[hot ideas]] can seduce.  [[Beware of hidden impossibilities]]

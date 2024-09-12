@@ -1,0 +1,3 @@
+Important things often happen in the spaces between the things you're really planning. In the hallways, not in the rooms.
+This morning, I was trying to write a letter. It took me about a minute to actually compose the letter. Then I spent the next twenty minutes finding a good text editor, setting up a printer, picking a font, fiddling with paragraph styles, printing the letter and signing it by hand, then scanning it back into PDF for an official delivery via email.
+I had to sign into things, Connect to printers, find a camera, on and on and on.

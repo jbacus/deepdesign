@@ -1,0 +1,1 @@
+[[Machiavelli]] quote about change, acceptance to change

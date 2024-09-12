@@ -1,0 +1,3 @@
+	1.	Thermodynamics: In this context, entropy quantifies the amount of energy in a physical system that is unavailable to do work, often interpreted as the level of disorder or randomness in the arrangement of particles.
+	2.	Information Theory: Entropy measures the amount of uncertainty or information content in a message or data set. It quantifies how much “surprise” there is in the outcome of a random process, often used in coding and data compression.
+	3.	General Understanding: Entropy broadly refers to the tendency of systems to move towards disorder or randomness over time, encapsulating the idea that things naturally progress from order to chaos unless energy is put in to maintain order.

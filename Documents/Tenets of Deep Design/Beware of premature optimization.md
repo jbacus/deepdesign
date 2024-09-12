@@ -1,0 +1,1 @@
+Beware of premature optimization, trying too hard to make the design efficient before it actually works at all. 

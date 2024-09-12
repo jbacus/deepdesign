@@ -1,0 +1,3 @@
+"Extending this idea of the streetlight effect, I suggest a “snowballing” effect: analogies may steer the direction of innovation towards areas with templates, which in turn, gain more templates and thus become more amenable to analogies, while neglected (and potentially fruitful) areas without templates may never get attention." --Soomi Kim
+
+https://dspace.mit.edu/bitstream/handle/1721.1/151632/Kim-skim20-PhD-Management-2023-thesis.pdf?sequence=1&isAllowed=y
