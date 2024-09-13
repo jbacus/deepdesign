@@ -1,11 +1,11 @@
 The Tenets of Deep Design include:
 
-- a practice of [[compassion]]
-- a practice of [[value]]
-- a practice of [[innovation]]
-- a practice of [[sketching]]
-- a practice of [[critique]]
-- a practice of [[launch]]
+- [[practice of compassion]]
+- [[practice of value]]
+- [[practice of innovation]]
+- [[practice of sketching]]
+- [[practice of critique]]
+- [[practice of launch]]
 
 
 

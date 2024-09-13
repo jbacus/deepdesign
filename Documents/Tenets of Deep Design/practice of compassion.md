@@ -56,9 +56,9 @@ How can competitor's team can think of better solution than us? We can't let thi
 All inclusive ego helps us to come out of the internal challenges mentioned above, and helps us to think about users being unbiased. and it results in the designs which they wanted, not designs which we need to solve the internal issues.
 
 ---
-- a practice of [[compassion]]
-- a practice of [[value]]
-- a practice of [[innovation]]
-- a practice of [[sketching]]
-- a practice of [[critique]]
-- a practice of [[launch]]
+- a practice of [[practice of compassion]]
+- a practice of [[practice of value]]
+- a practice of [[practice of innovation]]
+- a practice of [[practice of sketching]]
+- a practice of [[practice of critique]]
+- a practice of [[practice of launch]]

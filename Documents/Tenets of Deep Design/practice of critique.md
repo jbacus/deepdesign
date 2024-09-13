@@ -27,9 +27,9 @@ A practice of critique is one in which the designer regularly submits their work
 - [[stakeholder critique]]
 
 ---
-- a practice of [[compassion]]
-- a practice of [[value]]
-- a practice of [[innovation]]
-- a practice of [[sketching]]
-- a practice of [[critique]]
-- a practice of [[launch]]
+- a practice of [[practice of compassion]]
+- a practice of [[practice of value]]
+- a practice of [[practice of innovation]]
+- a practice of [[practice of sketching]]
+- a practice of [[practice of critique]]
+- a practice of [[practice of launch]]
