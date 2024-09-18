@@ -1,1 +1,1 @@
-- [[Deep Design in the Age of Generative AI]]Deep Design defines a practice that might be applied in many domains. Consider future branches here.
+- [[Deep Design in the Age of Generative AI]]: Deep Design defines a practice that might be applied in many domains. Consider future branches here.

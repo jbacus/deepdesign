@@ -18,7 +18,7 @@ A practice of critique is one in which the designer regularly submits their work
 [[Give and receive effective critique]]
 [[Always be ready to demo]]
 [[Good News Bad News]]
-
+[[Plasticity of Meaning]]
 
 # tools for critique
 - [[peer critique]]
@@ -29,7 +29,7 @@ A practice of critique is one in which the designer regularly submits their work
 ---
 - a practice of [[practice of compassion]]
 - a practice of [[practice of value]]
-- a practice of [[practice of innovation]]
+- a practice of [[practice of imagination]]
 - a practice of [[practice of sketching]]
 - a practice of [[practice of critique]]
 - a practice of [[practice of launch]]

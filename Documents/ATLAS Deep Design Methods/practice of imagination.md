@@ -4,9 +4,9 @@ Make as many ideas as you can, all the time. Write them down immediately, review
 
 willingness to be surprised, willingness to be delighted. Also, willingness to be disapointed or even horrified. If we only want predictable outcomes, we will remain forever under the streetlight.
 
-[[Innovation is a habit]], [[You need good habits]]. [[Get up early and stay up late]].
+[[You need good habits]]. [[Get up early and stay up late]].
 [[Daydreaming is work]]. [[You know more than you can say]] [[Accept intuition as valid thought]]
-[[You need a setup]]. [Keep notes all the time]]. [[Get a sketchbook and sketch in it]]. [[Commonplace Book]] [[Mathematica Notebook]], [[Idea Garden]]
+[[You need a setup]]. [Keep notes all the time]]. [[Get a sketchbook and sketch in it]]. [[Commonplace Book]] [[Mathematica Notebook]]
 [[Big things have small beginnings]]. [[Embrace indeterminacy]]. [[memory is constructive]]. [[design is the memory of a future state]]
 [[Celebrate obstruction]]. [[Throw most of your ideas away]]
 [[Throw your first idea away]]
@@ -67,7 +67,7 @@ https://docs.google.com/presentation/d/19uH6tVmigcuRI_kBoR44FBpYwTqt6qNChfNLtPsJ
 ---
 - [[practice of compassion]]
 - [[practice of value]]
-- [[practice of innovation]]
+- [[practice of imagination]]
 - [[practice of sketching]]
 - [[practice of critique]]
 - [[practice of launch]]

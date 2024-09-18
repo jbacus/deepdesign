@@ -18,7 +18,7 @@ a sketch is fuel for [[practice of critique]]
 ---
 - a practice of [[practice of compassion]]
 - a practice of [[practice of value]]
-- a practice of [[practice of innovation]]
+- a practice of [[practice of imagination]]
 - a practice of [[practice of sketching]]
 - a practice of [[practice of critique]]
 - a practice of [[practice of launch]]

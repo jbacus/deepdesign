@@ -6,7 +6,7 @@ Design is deepened when we recognize that it operates at [[more than surface lev
 
 As Stewart Brand reminds us, ”[[We are as gods, and we might as well get good at it]].” Never before has humanity been endowed with such power to shape the environment we live in to meet and exceed our expectations of need. Never before have designers had such a responsibility to do it right.
 
-Deep Design is not a linear process with a beginning and an end. Rather, it is a practice defined by nodes on the rich hypersurface of daily human experience..
+Deep Design is not a linear process with a beginning and an end. Rather, it is a practice defined by nodes on the rich hyper-surface of daily human experience.
 
 ![[Tenets of Deep Design]]
 

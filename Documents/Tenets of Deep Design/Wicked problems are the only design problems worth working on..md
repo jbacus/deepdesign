@@ -5,7 +5,7 @@ Rather than asking if we have *solved* the problem, ask if the new problem is pr
 [[The universe is stranger than we can imagine]]
 [[Wicked Problems]]
 [[At a minimum, do more good than bad.]]
-[[Design solutions worth working on are never complete.]]
+[[Deep Design solutions are never complete.]]
 
 ---
 ## Tags

@@ -4,7 +4,7 @@
 [[2.0 How to "design."]]
 [[3.0 Empathy]]
 [[4.0 Definition]]
-[[practice of innovation]]
+[[practice of imagination]]
 [[6.0 Prototype]]
 [[7.0 Testing]]
 [[8.0 Implementation]]

@@ -4,8 +4,8 @@ This is a garden for farming ideas related to design, design practice, design pe
 
 New ways of thinking, or newly considered old ways of thinking, are required.
 
-- [[Deep Design, Defined]] Start here for the basic tenents. This isn't a manifesto.
-- [[Discussions]]: Semi-regularly, we have meetings where we discuss topics in Deep Design.
+- [[Deep Design, Defined]] Start here for the basic tenets. This isn't a manifesto.
+- [[Discussions]]: Semi-regularly, we have meetings to discuss Deep Design topics.
 - [[Documents]]: Practical documentation of the principles and practices of Deep Design
 - [[Readings]]: relevant sources and historical precedent supporting Deep Design
 - [[Experiments]]: a sandbox for projects exploring Deep Design
@@ -13,6 +13,3 @@ New ways of thinking, or newly considered old ways of thinking, are required.
 ## Comments:
 [[sparks, not bonfires]]
 Practice is the aggregate of many process implementations, [[compiled knowledge]]
-
-## [[Appendix]]
-## [[Deeper Dives]]

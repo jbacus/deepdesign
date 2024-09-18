@@ -2,11 +2,16 @@ In the [[Agile Manifesto]], progress is shown through continuous, regular, deliv
 
 A launch might take many different forms, from the delivery of a polished asset, to a simple pitch of a new idea in an elevator.
 
+[[Deep Design is never complete]], and every designer is [[always polishing, never finished]]. [[Always be ready to demo]], [[Always be ready to show your work]]. [[Deep Design solutions are never complete.]], but that means it is also always complete to the point where it is right now.
+
+[[At a minimum, do more good than bad.]]
+
+
 
 ---
 - a practice of [[practice of compassion]]
 - a practice of [[practice of value]]
-- a practice of [[practice of innovation]]
+- a practice of [[practice of imagination]]
 - a practice of [[practice of sketching]]
 - a practice of [[practice of critique]]
 - a practice of [[practice of launch]]

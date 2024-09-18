@@ -2,4 +2,4 @@ You don't know anything about the best solution for the problem at hand until yo
 
 [[Permanent Notes/hegelian dialectic]]
 
-![[Design solutions worth working on are never complete.]]
+![[Deep Design solutions are never complete.]]

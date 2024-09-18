@@ -42,7 +42,7 @@ Rilke, Rainer Maria, Franz Xaver Kappus, and Joan M. Burnham. 2000. _Letters to 
 
 Rubin, Rick, and Neil Strauss. 2023. _The Creative Act: A Way of Being_. New York: Penguin Press.
 
-Schon, Donald A. 1984. _The Reflective Practitioner: How Professionals Think In Action_. 1st edition. New York: Basic Books.
+Schön, Donald A. 1984. _The Reflective Practitioner: How Professionals Think In Action_. 1st edition. New York: Basic Books.
 
 Shannon, Claude Elwood, and Warren Weaver. 1964. _The Mathematical Theory of Communication_. Urbana: University of Illinois Press.
 
