@@ -1,0 +1,1 @@
+Explicit at forst, practice it over and over again, then it becomes ‘compiled knowledge’

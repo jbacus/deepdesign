@@ -1,0 +1,3 @@
+You will never have enough time to explore all your ideas to the depth that you want to explore them. When time is up, put down your pencil and move on to the next thing.
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUce3PvjowXqDtoqFwY7O37GzEjGkm5EwGwinJ4SiRbzihE2kDKepBJII6UOpvtIrrRDvtff_bCXAI3fB5DsXdP7oHuStB6M0gBDUrrNY7gHVc26J2BmXyetDHgPcWnzisHUPoVaHvPIpUoCHuql-3HoRqwVGmBf=s2048?key=L9hy6SX9p48dnMq-F1NAsw)

@@ -1,0 +1,3 @@
+The first thing that comes into your mind is probably not that good an idea. Capture it, then let it go to make space for the next ideas to come. Think of it like you are just priming the pump.
+
+**![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfJzLy8iBdePKlmqslrawlcgR0T4Ixp3pWNbkK61dDIhA6WDiU-U0G_vO6a-w0fh830xuYVzRqhIf3DFj6_g9TKXi4pSNEhYzzxzMxEpPeDVUNq7hN5Y00mUEV0wtg0HQlDgzwkM8CU7UH0t4hpiMkJlNLAfvJt=s2048?key=L9hy6SX9p48dnMq-F1NAsw)**
