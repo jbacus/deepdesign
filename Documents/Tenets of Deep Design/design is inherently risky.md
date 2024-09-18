@@ -1,0 +1,1 @@
+Design is inherently about making a new state from an old state. By definition, design is change... and most people hate change. Deep Designers should not try to avoid risk or try to [[use research to mitigate risk]]

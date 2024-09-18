@@ -1,0 +1,1 @@
+![[Permanent Notes/fleeting notes]]

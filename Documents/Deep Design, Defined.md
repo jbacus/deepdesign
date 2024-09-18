@@ -15,5 +15,3 @@ If we seek deeper levels of design, we approach root causes and we build stronge
 Design takes time to deepen, and it is appropriate to begin your practice anywhere. If you adhere to a particular design Thinking orthodoxy, your practice may deepen from successfully running your process again and again.
 
 Beware that Deep Design is a dangerous practice, a practice that brings wild innovation that threatens norms and existing power structures. [[Machiavelli]] and [[Literature Notes/Omnivore/2024-09-11/We Have a Creativity Problem - The New York Times|We Have a Creativity Problem - The New York Times]]
-
-
