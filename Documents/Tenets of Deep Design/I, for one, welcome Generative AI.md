@@ -6,7 +6,7 @@ I, for one, welcome Generative AI as a design partner. Generative AI is a consen
 
 ---
 ## References
-[[@wolframNewKindScience2002a]]
+[[wolframNewKindScience2002a]]
 
 History
 Markov Chains (Applied Math); 1907, studying Pushkin, counted letters by hane, tried to produce a model that predicted if the next letter would be a consonant or vowel

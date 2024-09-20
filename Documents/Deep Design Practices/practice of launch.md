@@ -11,7 +11,7 @@ A launch might take many different forms, from the delivery of a polished asset,
 ---
 - a practice of [[practice of compassion]]
 - a practice of [[practice of value]]
-- a practice of [[practice of imagination]]
+- a practice of [[practice of ideas]]
 - a practice of [[practice of sketching]]
 - a practice of [[practice of critique]]
 - a practice of [[practice of launch]]

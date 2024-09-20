@@ -12,4 +12,4 @@ Claiming authorship of ideas that others also claim authorship over leads to a k
 ---
 ## References
 this comes from [[Dogme95]]
-[[@Dogme952023]]
+[[Dogme952023]]

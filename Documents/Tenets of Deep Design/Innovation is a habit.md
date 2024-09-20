@@ -1,1 +1,0 @@
-Innovation comes from catching ideas. We don't know where they come from, they come from anywhere. But we can attune ourselves to be better receivers of them when they come. And we can exercise responsibility in caring for them gently.

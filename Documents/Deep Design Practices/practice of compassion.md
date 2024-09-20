@@ -1,7 +1,9 @@
 A practice of compassion centers on heartfelt understanding of humans and the problems they face. Through compassion, opportunities to make an improvement on the world (the fundamental design act) become visible.
 [[all design problems are Wicked]], [[Wicked problems are the only design problems worth working on.]]
 
-As practiced by capitalistic Design Thinking, “empathy” is a tool which is used to expose traits in “users” that can be exploited for financial profit. Problems are an opportunity for financial gain. A practice of compassion acknowledges all human need in the space of consideration.
+As practiced in economic context of Design Thinking, “empathy” is a tool which is used to expose traits in “users” that can be exploited for financial profit. Problems are an opportunity for financial gain. A practice of compassion acknowledges this requirement in the context of all human need in the space of consideration.
+
+As Google reminds itself in the [[Ten things we know to be true - Google|Ten things we know to be true]], “Focus on the user and all else will follow.”
 
 [[all design problems are Wicked]]
 [[Deep design has deep empathy for humans.]]

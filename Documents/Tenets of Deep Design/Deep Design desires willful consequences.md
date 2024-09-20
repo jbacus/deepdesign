@@ -4,7 +4,7 @@ Deep design is the practice of initiating willful consequence. Design is a progr
 
 ---
 ## Tags
-#deepdesign #design #designfoundations #manifesto 
+#deepdesign #design #designfoundations 
 
 ---
 ## References

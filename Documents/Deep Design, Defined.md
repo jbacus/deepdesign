@@ -1,8 +1,8 @@
-[[Design]] is the most ancient, modern, difficult, cheapest, and most valuable human activity in the world. [[Deep Design desires willful consequences]] that are visible against the complex background of the most [[irreducible problems]] of our time in ways that orthodox Design Thinking can't reach.
+[[Design]] is the most ancient, modern, difficult, cheapest, and most valuable human activity in the world. [[Deep Design desires willful consequences]] that are visible against the complex background of the most [[irreducible problems]] of our time.
 
 Herbert Simon's [[Science of the Artificial]] has been coopted and systematized beyond all recognition in the contemporary practice of "[[Design Thinking]]." We recognize a deeper need.
 
-Design is deepened when we recognize that it operates at [[more than surface levels]]. Below every design solution, there is a deeper solution waiting to be addressed. Deep Design acknowledges that [[Wicked problems are the only design problems worth working on.]] and suggests that perhaps [[all design problems are Wicked]].
+Design is deepened when we recognize that problems operate at [[more than surface levels]]. Below every proposed design solution, there is a deeper solution waiting to be addressed. Deep Design acknowledges that [[Wicked problems are the only design problems worth working on.|wicked problems are the only problems worth working on]] and suggests that perhaps [[all design problems are Wicked]]. Further, deep design acknowledges [[pace layering]] and recognizes that deepened designs are those that have the longest lasting value.
 
 As Stewart Brand reminds us, ”[[We are as gods, and we might as well get good at it]].” Never before has humanity been endowed with such power to shape the environment we live in to meet and exceed our expectations of need. Never before have designers had such a responsibility to do it right.
 

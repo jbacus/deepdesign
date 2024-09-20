@@ -16,4 +16,4 @@ Intuition might be an expression of the designer's [[default mode network]]
 
 ---
 ## References
-[[@schonReflectivePractitionerHow1984a]]
+[[schonReflectivePractitionerHow1984a]]
