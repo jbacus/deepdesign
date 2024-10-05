@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: yellow;
+            background-color: white;
         }
 
         #network {
@@ -31,7 +31,7 @@
         // Simplified default configuration options for Vis.js
         var defaultOptions = {
             physics: {
-                enabled: true,  // Let physics handle the stabilization
+                enabled: true,
                 solver: 'barnesHut',
                 barnesHut: {
                     gravitationalConstant: -2000,
@@ -47,7 +47,7 @@
                 }
             },
             interaction: {
-                zoomView: true,  // Enable zoom and pan
+                zoomView: true,
             },
             nodes: {
                 shape: 'dot',
@@ -108,11 +108,16 @@
 
                     let index = 0;
 
+                    // Log the node and edge data for debugging
+                    console.log("Loaded node data:", nodeData);
+                    console.log("Loaded edge data:", edgeData);
+
                     // Function to add nodes and their connecting edges one by one
                     function addNodeAndEdgesOneByOne() {
                         if (index < nodeData.length) {
                             let currentNode = nodeData[index];
                             nodes.add(currentNode);  // Add one node at a time
+                            console.log(`Node added: ${currentNode.id}`);  // Log each node addition
 
                             // Find and add edges connected to this node
                             let connectedEdges = edgeData.filter(edge => 
@@ -122,12 +127,14 @@
                             // Add edges related to this node
                             if (connectedEdges.length > 0) {
                                 edges.add(connectedEdges);
+                                console.log(`Edges added for node ${currentNode.id}:`, connectedEdges);  // Log edge additions
                             }
 
                             index++;
-                            setTimeout(addNodeAndEdgesOneByOne, 100);  // Delay between each node addition
+                            setTimeout(addNodeAndEdgesOneByOne, 200);  // Slightly increase delay for visibility
                         } else {
                             // Once all nodes and edges are added, fit the graph to the screen
+                            console.log("All nodes and edges added. Fitting the graph...");
                             network.fit({
                                 animation: {
                                     duration: 500,
@@ -140,7 +147,9 @@
                     // Start adding nodes and their connected edges one by one
                     addNodeAndEdgesOneByOne();
                 })
-                .catch(error => console.error('Error loading graph data:', error));
+                .catch(error => {
+                    console.error('Error loading graph data:', error);
+                });
         }
 
         // Delay rendering to ensure the container is ready
