@@ -15,13 +15,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: thistle;
+            background-color: 'white'';
         }
 
         #network {
             width: 100vw; /* Fill the entire viewport width */
             height: 100vh; /* Fill the entire viewport height */
-            border: 1px solid lightgray;
         }
 
         /* Progress bar container */
@@ -44,7 +43,7 @@
         #progress-bar {
             width: 0%;
             height: 100%;
-            background-color: #4CAF50;
+            background-color: 'orange';
             border-radius: 10px;
         }
     </style>
@@ -82,7 +81,7 @@
             },
             nodes: {
                 shape: 'dot', // Default shape of the nodes
-                size: 20, // Default size of the nodes
+                size: 10, // Default size of the nodes
                 color: {
                     border: '#000000', // Black border
                     background: '#000000', // Black background
@@ -102,7 +101,7 @@
                     strokeWidth: 0, // No stroke around the text
                     strokeColor: '#ffffff' // Optional text stroke color
                 },
-                borderWidth: 2 // Border width around nodes
+                borderWidth: 3 // Border width around nodes
             },
             edges: {
                 width: 2, // Default edge width
@@ -113,11 +112,11 @@
                     opacity: 1.0 // Fully opaque
                 },
                 arrows: {
-                    to: { enabled: true, scaleFactor: 0.5 } // Arrows on the edges
+                    to: { enabled: true, scaleFactor: 1 } // Arrows on the edges
                 },
                 smooth: {
                     type: 'dynamic', // Smooth curved edges
-                    roundness: 0.5 // Adjust curvature
+                    roundness: 1 // Adjust curvature
                 }
             }
         };
