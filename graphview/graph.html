@@ -115,8 +115,14 @@
                             nodes.add(currentNode);  // Add one node at a time
 
                             // Find and add edges connected to this node
-                            let connectedEdges = edgeData.filter(edge => edge.from === currentNode.id || edge.to === currentNode.id);
-                            edges.add(connectedEdges);
+                            let connectedEdges = edgeData.filter(edge => 
+                                edge.from === currentNode.id || edge.to === currentNode.id
+                            );
+
+                            // Add edges related to this node
+                            if (connectedEdges.length > 0) {
+                                edges.add(connectedEdges);
+                            }
 
                             index++;
                             setTimeout(addNodeAndEdgesOneByOne, 100);  // Delay between each node addition
