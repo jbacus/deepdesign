@@ -1,0 +1,113 @@
+Design as a practice has many variations, and there is surely no singularly 'best' way to do it. The critical elements of a design practice include basic problem observation, recognition of physical affordances and risks, and the willful desire to put your idea out there as the best solution.
+
+Design has an improvisational quality, and thrives on intuitive leaps. The best decisions are often felt' more than 'known.'
+
+-  Introduction
+	-   Definition of Design Thinking
+	-   Importance of Design Thinking in problem-solving
+	-   Overview of the lecture
+- The Design Thinking Process
+	-   Empathize: Understanding the users and their needs
+	-   Define: Defining the problem
+	-   Ideate: Generating ideas to solve the problem
+	-   Prototype: Creating a physical or digital representation of the solution
+	-   Test: Testing and evaluating the solution
+- Design Thinking Methodologies
+	- Human-centered design, Double Diamond process, Lean Design, Design Sprint, Agile Design, Systems Thinking, and Service Design are all design thinking methodologies, but they have some key differences in their approach, focus and application.
+	- **Human-centered design** is a user-centered approach that emphasizes understanding the needs and wants of the users through research and empathy, and creating solutions that meet those needs. It puts users at the center of the design process, and it is iterative, meaning that the design process is repeated until the best solution is found. It requires a deep understanding of the user's context, behavior and motivations, and it is often used in projects that involve creating new products or services.
+	- **The Double Diamond process** is a design thinking process that includes four stages: Discover, Define, Develop and Deliver. The first two stages, Discover and Define, are focused on understanding the problem and identifying the user's needs. The next two stages, Develop and Deliver, are focused on creating and implementing solutions. The Double Diamond process is often used in projects that require a high degree of innovation and creativity, it is a flexible and adaptable process, and it allows for the exploration of different ideas.
+	- Lean Design** is a design thinking methodology that is focused on creating solutions that are customer-centered, efficient, and fast. It emphasizes the use of a Build-Measure-Learn cycle, where solutions are rapidly prototyped and tested with users, and then refined based on feedback. It is a fast-paced, iterative process that is often used in projects that require rapid prototyping and testing, such as digital products or services.
+	- Design Sprint** is a five-day process for solving problems and testing new ideas, developed by Google Ventures. It involves bringing a team together to brainstorm, prototype, and test solutions in a compressed time frame, and it is often used in projects that require fast-paced, collaborative problem-solving.
+	- Agile Design** is a design thinking methodology that is based on the Agile development methodology. It emphasizes flexible, iterative, and incremental design and development, with a strong focus on collaboration and continuous feedback. It is often used in projects that involve complex and rapidly changing requirements, such as software development.
+	- Systems Thinking** is a design thinking methodology that focuses on understanding the relationships and interactions between the different elements of a system, and designing solutions that take these interactions into account. It is often used in projects that involve complex systems, such as organizational design or urban planning.
+	- Service Design** is a design thinking methodology that is focused on designing and improving the interactions and experiences between customers and businesses or organizations. It involves a user-centered approach and an understanding of the whole service experience, from the customer's perspective.
+	- Each of these methodologies has its strengths and limitations, and the choice of which methodology to use depends on the specific context
+- Applications of Design Thinking
+	-   Design Thinking in business
+		- Design Thinking is a problem-solving approach that can be applied to various business challenges, such as creating new products or services, improving existing ones, streamlining processes, or even enhancing the performance of an organization.
+		- In business, design thinking can be used to:
+			- Understand customer needs and wants: Design thinking emphasizes the use of user research, empathy, and prototyping to understand customer needs and wants. This allows businesses to create products and services that are tailored to customer needs and that are more likely to be successful.
+			- Create innovative solutions: Design thinking encourages the exploration of multiple ideas, and it allows businesses to generate new and innovative solutions to problems.
+			- Improve efficiency and effectiveness: Design thinking can be used to identify inefficiencies and bottlenecks in business processes, and to create solutions that improve efficiency and effectiveness.
+			- Enhance customer experience: Design thinking can be used to design and improve the interactions and experiences between customers and businesses, which can lead to increased customer satisfaction and loyalty.
+			- Create a culture of innovation: Design thinking can be used to create a culture of innovation within an organization, by encouraging employees to think creatively and to take a user-centered approach to problem-solving.
+			- Foster collaboration and teamwork: Design thinking is a collaborative process that requires the participation and input of a diverse group of stakeholders, this can foster collaboration and teamwork within the organization.
+			- Design and improve internal processes: Design thinking can be applied to internal processes, like HR, finance and administration, to enhance the performance and productivity of an organization.
+			- Develop new business models: Design thinking can also be used to develop new business models and to identify new opportunities for growth and revenue.
+		- Design thinking can be used in a wide range of business contexts and it can be adapted to the specific needs of an organization. It has the potential to create a competitive advantage, by creating products and services that are tailored to customer needs and by fostering a culture of innovation and continuous improvement.
+	-   Design Thinking in education
+		- Design Thinking is a problem-solving approach that can be applied to the field of education to improve teaching and learning experiences.
+		- In education, design thinking can be used to:
+			- Understand student needs and wants: Design thinking emphasizes the use of user research, empathy, and prototyping to understand student needs and wants. This allows educators to create curriculum, teaching methods, and learning experiences that are tailored to student needs and that are more likely to be effective.
+			- Create innovative solutions: Design thinking encourages the exploration of multiple ideas, and it allows educators to generate new and innovative solutions to problems in education.
+			- Improve teaching and learning: Design thinking can be used to identify inefficiencies and bottlenecks in teaching and learning, and to create solutions that improve the quality of education.
+			- Enhance student engagement: Design thinking can be used to design and improve the interactions and experiences between students and educators, which can lead to increased student engagement and motivation.
+			- Create a culture of innovation: Design thinking can be used to create a culture of innovation within an educational institution, by encouraging educators to think creatively and to take a user-centered approach to problem-solving.
+			- Foster collaboration and teamwork: Design thinking is a collaborative process that requires the participation and input of a diverse group of stakeholders, this can foster collaboration and teamwork within the educational institution.
+			- Design and improve internal processes: Design thinking can be applied to internal processes, like administration, finance, and human resources, to enhance the performance and productivity of an educational institution.
+			- Develop new pedagogy: Design thinking can also be used to develop new pedagogy and to identify new opportunities for student-centered learning.
+		- Design thinking can be used in a wide range of educational contexts and it can be adapted to the specific needs of an institution. It has the potential to create a competitive advantage, by creating curriculum and teaching methods that are tailored to student needs and by fostering a culture of innovation and continuous improvement.
+	-   Design Thinking in healthcare
+		- Design Thinking is a problem-solving approach that can be applied to the field of healthcare to improve patient care and outcomes.
+		- In healthcare, design thinking can be used to:
+			- Understand patient needs and wants: Design thinking emphasizes the use of user research, empathy, and prototyping to understand patient needs and wants. This allows healthcare professionals to create treatment plans, medical devices, and facilities that are tailored to patient needs and that are more likely to be effective.
+			- Create innovative solutions: Design thinking encourages the exploration of multiple ideas, and it allows healthcare professionals to generate new and innovative solutions to problems in healthcare.
+			- Improve patient care: Design thinking can be used to identify inefficiencies and bottlenecks in patient care, and to create solutions that improve the quality of care.
+			- Enhance patient experience: Design thinking can be used to design and improve the interactions and experiences between patients and healthcare professionals, which can lead to increased patient satisfaction and trust.
+			- Create a culture of innovation: Design thinking can be used to create a culture of innovation within a healthcare organization, by encouraging healthcare professionals to think creatively and to take a user-centered approach to problem-solving.
+			- Foster collaboration and teamwork: Design thinking is a collaborative process that requires the participation and input of a diverse group of stakeholders, this can foster collaboration and teamwork within a healthcare organization.
+			- Design and improve internal processes: Design thinking can be applied to internal processes, like administration, finance, and human resources, to enhance the performance and productivity of a healthcare organization.
+			- Develop new medical devices or technologies: Design thinking can also be used to develop new medical devices or technologies and to identify new opportunities for improving patient care.
+		- Design thinking can be used in a wide range of healthcare contexts and it can be adapted to the specific needs of an organization. It has the potential to create a competitive advantage, by creating treatments, medical devices and facilities that are tailored to patient needs and by fostering a culture of innovation and continuous improvement.
+	-   Design Thinking in urban planning
+		- Design Thinking is a problem-solving approach that can be applied to the field of urban design to improve the livability, functionality, and sustainability of cities and communities.
+		- In urban design, design thinking can be used to:
+			- **Understand community needs and wants:** Design thinking emphasizes the use of user research, empathy, and prototyping to understand the needs and wants of the community. This allows urban designers to create plans and designs that are tailored to community needs and that are more likely to be accepted and successful.
+			- **Create innovative solutions:** Design thinking encourages the exploration of multiple ideas, and it allows urban designers to generate new and innovative solutions to problems in urban design.
+			- **Improve livability:** Design thinking can be used to identify inefficiencies and bottlenecks in urban design and to create solutions that improve the livability of cities and communities.
+			- **Enhance community engagement:** Design thinking can be used to design and improve the interactions and experiences between community members and urban designers, which can lead to increased community engagement and participation.
+			- **Create a culture of innovation:** Design thinking can be used to create a culture of innovation within an urban design organization, by encouraging urban designers to think creatively and to take a user-centered approach to problem-solving.
+			- **Foster collaboration and teamwork:** Design thinking is a collaborative process that requires the participation and input of a diverse group of stakeholders, this can foster collaboration and teamwork within an urban design organization.
+			- **Design and improve internal processes:** Design thinking can be applied to internal processes, like administration, finance, and human resources, to enhance the performance and productivity of an urban design organization.
+			- **Develop new urban design principles:** Design thinking can also be used to develop new urban design principles, and to identify new opportunities for sustainable and livable cities.
+		- Design thinking can be used in a wide range of urban design contexts and it can be adapted to the specific needs of a community. It has the potential to create a competitive advantage, by creating plans and designs that are tailored to community needs and by fostering a culture of innovation and continuous improvement.
+- Challenges and Limitations
+	-   Common misconceptions about Design Thinking
+		- **Design thinking is only for designers:** Design thinking is not only for designers, it is a problem-solving approach that can be applied to any field or industry. It can be used by professionals from various backgrounds, such as business, engineering, healthcare, and education.
+		- **Design thinking is only for creating new products or services:** Design thinking can be applied to a wide range of problems and challenges, including improving existing products or services, designing new business models, or solving complex social or organizational problems.
+		- **Design thinking is a one-time process:** Design thinking is an iterative process that requires multiple rounds of testing and refining. It is not a one-time event but a continuous process of creating, testing, and refining solutions.
+		- **Design thinking is a linear process:** Design thinking is not a linear process, it is an iterative and cyclical process that often requires going back and forth between different stages.
+		- **Design thinking is only about aesthetics:** Design thinking is not just about aesthetics, it is about understanding the user's needs, solving problems, and creating functional and efficient solutions. While aesthetics are important, they are only one aspect of the design thinking process.
+		- **Design thinking is only for startups or small companies:** Design thinking can be applied to organizations of any size, whether they are startups, small businesses, or large corporations.
+		- **Design thinking is only for innovation:** While design thinking is often used for innovation, it can also be used to improve existing products or services, and streamline processes, or even to enhance the performance of an organization.
+		- **Design thinking is only for visual or physical products:** While design thinking is often applied to visual or physical products, it can also be applied to services, systems, and even policies.
+	-   Limitations of Design Thinking
+		- **Time and resource constraints:** Design thinking can be a resource-intensive process that requires a significant investment of time and money. It may not be feasible for some organizations or projects that have limited resources.
+		- **Lack of expertise:** Design thinking requires a certain level of expertise in user research, prototyping, and testing, which may not be available in some organizations. It may also require the involvement of multiple experts from different fields.
+		- **Resistance to change:** Design thinking often requires a significant change in the way things are done, and this can be met with resistance from stakeholders who are not familiar or comfortable with the process.
+		- **Difficulty in measuring success:** Design thinking can be challenging to measure, as it is not always easy to quantify the impact of the solutions created through the process.
+		- **Risk of bias:** Design thinking is a user-centered approach, but it still relies on the perspectives and biases of the people involved in the process. It is important to be aware of these biases and to use methods to minimize their impact.
+		- **Difficulty in scaling:** Design thinking can be difficult to scale up, as it is often a highly customized process that is tailored to the specific needs of a project or organization.
+		- **Difficulty in maintaining momentum:** Design thinking requires a high degree of collaboration and engagement from all stakeholders, and it can be challenging to maintain this level of engagement over time.
+		- **Difficulty in making decisions:** Design thinking encourages the exploration of multiple ideas, but it can be challenging to make final decisions and move forward with a single solution.
+	-   Addressing resistance to change
+		- **Communicate the benefits:** Communicate clearly and frequently the benefits of design thinking, such as improved customer satisfaction, increased efficiency, and cost savings. This can help to build support for the process and overcome resistance.
+		- **Involve stakeholders in the process:** Involve stakeholders in the design thinking process as early as possible, this can help to build buy-in and ownership of the solution. It also allows stakeholders to understand the process and the benefits, and to provide valuable input and feedback.
+		- **Provide training and education:** Provide training and education to stakeholders on the design thinking process and its benefits. This can help to increase understanding and acceptance of the process.
+		- **Address concerns and objections:** Address any concerns or objections that stakeholders may have about the design thinking process. This can help to address any misconceptions and to build support for the process.
+		- **Use pilot projects:** Use pilot projects to demonstrate the value of design thinking and to build support for the process. This allows stakeholders to see the benefits firsthand and to provide feedback on the process.
+		- **Show the data:** Use data and metrics to demonstrate the value of design thinking and to track progress. This can help to build support for the process and to address any concerns about the process.
+		- **Lead by example:** Lead by example and demonstrate the value of design thinking through the actions and behavior of the leadership team. This can help to build support for the process and to encourage others to adopt the process.
+		- **Be flexible:** Be flexible and adapt the design thinking process to the specific needs and constraints of the organization or project. This can help to address any resistance to change and to build support for the process.
+-  Conclusion
+	-   Summary of key points
+	- **Product Design:** Design Thinking is widely used in product design to develop new products or to improve existing ones. It involves understanding the needs and wants of customers, prototyping and testing different ideas, and iterating until a final solution is reached.
+	- **Service Design:** Design Thinking is also used in service design to improve the experience of customers and to create more efficient and effective services. It involves understanding the customer journey, prototyping different service scenarios, and testing them with customers.
+	- **Business Model Innovation:** Design Thinking can be used to develop new business models or to improve existing ones. It involves understanding customer needs, prototyping different business models, and testing them with customers to see which one is most viable.
+	- **Marketing and Branding:** Design Thinking can be used in marketing and branding to understand customer needs and to create effective campaigns and branding strategies. It involves using customer research, prototyping, and testing to understand customer behavior and preferences.
+	- **Software and App Development:** Design Thinking can be used in software and app development to understand user needs and to create effective interfaces and user experiences. It involves using user research, prototyping, and testing to understand user behavior and preferences.
+	- **Organizational Design:** Design Thinking can be used in organizational design to improve the efficiency and effectiveness of an organization. It involves understanding the needs of employees, prototyping different organizational structures, and testing them to see which one is most effective.
+	- **Urban Planning:** Design Thinking can be used in urban planning to create livable, functional and sustainable cities and communities. It involves understanding the needs and wants of residents, prototyping different urban design scenarios and testing them with residents to see which one is most viable.
+	- **Public Policy:** Design Thinking can be used to develop public policies and programs that are more effective and efficient. It involves understanding the needs of citizens, prototyping different policy options and testing them with citizens to see which one is most viable.
+	-   Resources for further learning
+	-   Q&A

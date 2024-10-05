@@ -1,9 +1,63 @@
+In the context of design, empathy helps designers understand users’ experiences, while compassion drives them to actively solve the users’ problems by improving their conditions through thoughtful design.
+
+When I began working closely with designers in India, I rapidly came to realise there was a well established (thousands of years old) tradition in the practice of compassion. The practices are both time-tested and also simple.
+
+In [[Design Thinking]] we focus our attention on understanding the needs and motivations of our users. We explore our users with just enough depth to be able to create archetypical “[[Artificial Persona]]” of them sufficient to be able to talk about them in meetings. We explore their [[jobs to be done]] in structured frameworks that make it possible to precisely exploit their pain in commercially-viable ways. This process is effective and has lead to an industry-wide improvement in usability.
+
+To deepen this empathy in designers, accepting a [[practice of value]] as essential to our design’s viability, we might look deeper into a practice of compassion.
+
+![[Pasted image 20240923150004.png]]
+two birds sitting on a branch, one eating, one is observing
+
+how to catch monkeys in Himachal; nuts in a jar, monkey grabs the nut, won't let go.
+
+
+compassion == honest with myself about what I know about you
+
+find the goodness in it; ego is present, ego is finding goodness
+
+IQ:EQ:SQ <-> SQ:EQ:IQ
+
+compassion:passion:dispassion
+
+what happiness can dispassion not give; 
+
+Shiva - most compassionate; also the destroyer [[karpurgauram]]
+
+[[Kabira]] 
+
+raaga dwesh Craving and aversion 
+
+to be compassionate you must be yourself
+
+Rate of solution changes slower than rate of change of problem = wicked problem
+
+Kahil Gabrian; Madman; masks- when wearing a mask we don't open up
+
+Compassion requires self to be open; can't work when there is a risk to the individual
+
+compassion is a neutral position, not too helpful, not too harmful; this is a difficult position to find
+
+Keep up to date on the tech; 
+
+stay curious, not judgemental 
+
+attention span is short, life is faster, 
+
+start small, 
+
+
+
 A practice of compassion centers on heartfelt understanding of humans and the problems they face. Through compassion, opportunities to make an improvement on the world (the fundamental design act) become visible.
 [[all design problems are Wicked]], [[Wicked problems are the only design problems worth working on.]]
 
 As practiced in economic context of Design Thinking, “empathy” is a tool which is used to expose traits in “users” that can be exploited for financial profit. Problems are an opportunity for financial gain. A practice of compassion acknowledges this requirement in the context of all human need in the space of consideration.
 
-As Google reminds itself in the [[Ten things we know to be true - Google|Ten things we know to be true]], “Focus on the user and all else will follow.”
+As Google reminds itself in the [[Ten things we know to be true - Google|Ten things we know to be true]], “Focus on the user and all else will follow.” But how to we achieve that focus? Especially in contexts where our own bias and preconceptions can cloud understanding thoroughly.
+
+[[Field Work]]
+[[Interviewing]]
+
 
 [[all design problems are Wicked]]
 [[Deep design has deep empathy for humans.]]
@@ -16,6 +70,7 @@ As Google reminds itself in the [[Ten things we know to be true - Google|Ten thi
 ## tools and techniques
 [[mapping Wicked Problems]]
 
+## [[Design Thinking]]
 ## references
 
 in design teams,  
@@ -136,7 +191,7 @@ Both Buddhist and Hindu traditions offer valuable practices to help you cultivat
 ---
 - a practice of [[practice of compassion]]
 - a practice of [[practice of value]]
-- a practice of [[practice of innovation]]
+- a practice of [[practice of ideas]]
 - a practice of [[practice of sketching]]
 - a practice of [[practice of critique]]
 - a practice of [[practice of launch]]

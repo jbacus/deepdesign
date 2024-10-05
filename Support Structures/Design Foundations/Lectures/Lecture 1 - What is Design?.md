@@ -1,17 +1,85 @@
-# What is design?
-![](https://lh7-us.googleusercontent.com/hrg-foC4Qb0vYy6pxUei57cGyM_AojO1wCY9xLRXDqFpOErt8ZoZs7tEX4Q4WbawHUQw6qVDuyT1nxxWJgCOlD0O-DRCC-2myCdBJ2kHZzi5I6W-XDFIVQ3DUgiexZZgo_jGgU-eZTHA42nIqVlx26v6pw=s2048)
+![[Ch_00_00.png]]
+# Design Foundations
+ATLS1100 - Spring 2021
+
+## John Bacus
+Instructor, Dir. Undergraduate Program
+john.bacus@colorado.edu
+
+intro: Miles Davis, In a Silent Way
+
+---
+
+# Class Meetings
+## Lecture
+Thursday, 09:30 AM - 10:45 AM, ATLS 100 (John Bacus)
+## Recitations
+011 (Kaya Walker), Friday, 09:05 AM - 10:20 AM, ATLS 1B31
+012 (James Tran), Friday, 11:15 AM - 12:30 PM, ATLS 1B31
+013 (Neill Shikada), Friday, 01:25 PM - 02:40 PM, ATLS 1B31
+014 (Cade Ponder),  Friday, 03:35 PM - 04:50 PM, ATLS 1B31
+
+## Office Hours
+ATLS 205B, Tuesday, Wednesday, Thursday 1:00 PM - 2:00 PM
+
+NOTE: I expect you to come to every lecture, and to participate actively in every recitation. Don’t do it for me, do it for you!
+
+---
+![[jbacus Profile Photo.png]]
+# I'm a meta-designer.
+Some of the things I have designed are in my portfolio: https://bacus.org but I've designed a lot of things in my life that don't fit in such a neat box. 
+- I've also designed system architectures, business models, organizations, sales bundles, and marketing campaigns for Trimble Navigation.
+- I've designed user-generated content communities used to populate maps with rich 3D building data for Google Earth and Maps.
+- I've designed 3D modeling software for architects and others who need simple-to-use spatial sketching tools as a member of the SketchUp startup team.
+- I've designed buildings, including the one we're in right now.
+---
+# I'm (re)designing this class
+To me, "design" is an elusive term, and one which bears rethinking as often as possible. This is my first time teaching Design Foundations, and I'm giving it my own spin. Together, we're designing a Design Foundations class.
+In previous semesters, I've taught a course in Product Management for folks who are interested in designing products. 
+Last Spring, I taught a class in Digital Sketching. I wrote a book about that, too.
+![[DigitalSketching-bookcover.jpg]]
+---
+# Your LA's for this class
+## Kaya Walker
+## James Tran
+## Neill Shikada
+## Cade Ponder
+
+---
+
+# [[ATLS 1100 Syllabus]] Review
+Let's discuss my expectations for you, and your expectations for this course. What do YOU want to get out of these fifteen weeks we'll spend together?
+- **Lectures**: Each week I will give a lecture on Design. I will share the slides for those lectures here on Canvas for you to review after class.
+- **Exercises**: Following the material covered in each lecture, you will engage in hands-on practical activities in Recitation that allow you to explore the lecture material yourself.
+- **Reflections**: In canvas, following our lecture each week, I'll ask you to post a written reflection on the material covered. This week, use the Reflection as an opportunity to talk about your expectation for this class.
+
+---
+# What even IS design?
 I've shared some of the things I have designed, and maybe given you a sense for the breadth of things I think of as being part of "design." But what do you think? Knowing what you know today, how would you define "design?"
-Take a few minutes to write down your personal definition of design. Don't use ChatGPT.
-> [!cite]
-> Design refers to the process of creating a plan or proposal for the creation of a product or system, often with the goal of improving or optimizing its function, form, or aesthetic. It can refer to the planning and development of a wide range of products, such as architectural designs, engineering designs, fashion designs, and graphic designs. It often involves a combination of creativity, research, and problem-solving skills, and can be applied in fields such as architecture, industrial design, graphic design, and user interface design.
-> — ChatGPT
+
+Take a few minutes to write down your personal definition of design. Don't use ChatGPT. ;-)
+
+---
+
+>Design refers to the process of creating a plan or proposal for the creation of a product or system, often with the goal of improving or optimizing its function, form, or aesthetic. It can refer to the planning and development of a wide range of products, such as architectural designs, engineering designs, fashion designs, and graphic designs. It often involves a combination of creativity, research, and problem-solving skills, and can be applied in fields such as architecture, industrial design, graphic design, and user interface design.
+
+---
+![[Definition-of-Design.png]]
+
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MS8p-CgTJIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
 
 # What do I think design is?
 Design is the assertion that there is something about the world which should be changed combined with the will to propose a better alternative. Design is the willful drive to make something better of the world.
-> [!cite]
-> "Questions about whether design is necessary or affordable are quite beside the point: design is inevitable. The alternative to good design is bad design, not no design at all."
-> 
+
+"Questions about whether design is necessary or affordable are quite beside the point: design is inevitable. The alternative to good design is bad design, not no design at all."
+
 — Douglas Martin, on Twitter
+
+---
 
 # an origin story for "Design"
 - from prehistory through the Rennaissance
@@ -93,10 +161,14 @@ Art Nouveau. (2023, January 14). In _Wikipedia_. https://en.wikipedia.org/wiki/A
 Art Nouveau was a decorative art style that emerged in the late 19th century, characterized by its use of organic, flowing lines and asymmetrical shapes, often inspired by nature. It was widely used in architecture, interior design, and applied arts, such as furniture and ceramics. Some notable examples of Art Nouveau architecture include the Gare d'Orsay in Paris, the Antoni Gaudi's buildings in Barcelona, and the Glasgow School of Art by Charles Rennie Mackintosh.
 
 ---
+
 ### The Bauhaus
 Bauhaus was a German design school that was active from 1919 to 1933. It aimed to bring together fine art, craft, and technology, and to create a new form of design that would be suitable for the modern world. Bauhaus was known for its functional and minimalistic designs, characterized by clean lines, geometric shapes and a focus on functionality. Bauhaus had a significant impact on design, architecture, and art, and its ideas continue to influence design today. Examples of Bauhaus architecture include the school building in Dessau, Germany and the Haus am Horn in Weimar, Germany.
 
 ---
+
+![[The_Barcelona_Pavilion,_Barcelona,_2010.jpg]]
+International Style (architecture). (2023, January 7). In _Wikipedia_. https://en.wikipedia.org/wiki/International_Style_(architecture)
 
 ### The International Style
 The International Style emerged in the 1920s and 1930s, and was characterized by an emphasis on simplicity, functionality, and the use of new materials, such as steel and glass. The style was promoted by architects such as Le Corbusier, Walter Gropius and Mies van der Rohe, and was associated with the development of modernist architecture. Examples of International Style architecture include the Seagram Building in New York City and the Villa Savoye in Poissy, France.

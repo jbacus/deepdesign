@@ -6,6 +6,7 @@ A practice of critique is one in which the designer regularly submits their work
 
 [[hegelian antithesis]]
 
+[[Chatham House Rule]]
 
 [[Distrust authorship]]
 [[Permanent Notes/Stay Agile]]

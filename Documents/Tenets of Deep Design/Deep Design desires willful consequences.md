@@ -8,4 +8,4 @@ Deep design is the practice of initiating willful consequence. Design is a progr
 
 ---
 ## References
-[[intended consequences]]
+[[intended consequences]] [[willful]]

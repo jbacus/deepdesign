@@ -10,4 +10,4 @@ FROM "[insert Literature Notes folder here]"
 ```
 [@argyleOutOneMany2023]
 
-[[@argyleOutOneMany2023a]]
+[[argyleOutOneMany2023]]

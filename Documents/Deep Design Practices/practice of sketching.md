@@ -14,6 +14,8 @@ a sketch is fuel for [[practice of critique]]
 
 [[agile]]
 
+## Lecture
+https://docs.google.com/presentation/d/10nncODhW6kpaYkWT9M-rtAWzMWJaiLk87KVie5pcpKI/edit#slide=id.g1d6eb0d477a_0_119
 
 ---
 - a practice of [[practice of compassion]]

@@ -1,7 +1,7 @@
 
 [[0.0 The ATLAS Way of Design]]
 [[1.0 What is "Deep Design?"]]
-[[2.0 How to "design."]]
+[[2.0 How to design deeply]]
 [[3.0 Empathy]]
 [[4.0 Definition]]
 [[practice of ideas]]

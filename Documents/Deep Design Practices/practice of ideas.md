@@ -18,7 +18,7 @@ All ideas seem to come from other ideas, and there is nothing truly novel in the
 
 With practice, intuition is trained to produce leaps of insight rather than simple preconception that does nothing more than expose hidden bias. A [[schonReflectivePractitionerHow1984a|reflective practitioner]] is one who has compiled a wide body of knowledge and experience and is able to make snap decisions that demonstrate that they [[You know more than you can say|know more than they can say]]. A practice of ideas [[Accept intuition as valid thought|accepts intuition as deep thought]] and knows that rigor sometimes follows intuition.
 
-Consider [[mccarthyKekuleProblem2017a|the “Kekulé Problem”]] if the above statement makes your rational self uncomfortable. Scientists and mathematicians have known for hundreds of years that there are deeper forms of thinking than the language-locked cognition that feels so logical. August Kekulé, when stumped by the geometric problem of benzene, had a dream- a mythical dream about the Oroboros. When he awoke, he knew that benzene was a ring.
+Consider [[mccarthyKekuleProblem2017a|the “Kekulé Problem”]] if the above statement makes your rational self uncomfortable. Scientists and mathematicians have known for hundreds of years that there are deeper forms of thinking than the language-locked cognition that feels so rational to most. August Kekulé, when stumped by the geometric problem of the benzene molecule, had a dream- a mythical dream about the Oroboros. When he awoke, he knew that benzene was a ring.
 
 In a practice of ideas, [[design is the memory of a future state]], constructed meticulously but at the same time intuitively. [[About Me/My Projects/Digital Sketching/Creative Rigor in Design|Creative rigor]] is difficult to audit, perhaps, but it is apparent when in absence. In the practice of ideas, we may not be able to say how we know, but we know we are right and experience will prove that out. [[Creativity is learning the rules of an unknown future]]. Innovation is the act of bringing that remembered future state into existence?
 
@@ -31,7 +31,7 @@ In Design Thinking methodologies, we teach practices that are effective at captu
 
 Process-following activities engage the brain’s executive mode, which causes the default mode network to disengage. Ironic, isn’t it, that precisely the activity that leads us to believe we are responsibly ideating is the one that might well actually turn your brain’s most creative mode off.
 
-[[You need a setup]]. [Keep notes all the time]]. [[Get a sketchbook and sketch in it]]. [[Commonplace Book]] [[Mathematica Notebook]], [[Idea Garden]]
+[[You need a setup]]. [[Keep notes all the time]]. [[Get a sketchbook and sketch in it]]. [[Commonplace Book]] [[Mathematica Notebook]], [[Idea Garden]]
 
 [[The Charette is coming]]
 
@@ -41,11 +41,13 @@ invention not innovation;
 
 **
 
+[[day job night job]]
 
 
 ## References
 
-
+## Lecture
+https://docs.google.com/presentation/d/1x6zAgNJT-r2NEln33NhPXe09WHRaHeMcbiBNDyUrQ04/edit?usp=sharing
 
 
 [[how memory works]]
@@ -79,6 +81,7 @@ Write an HBR article to write, “the value of daydreaming”
 - true time off
 - 
 
+Buddha: "If you love a flower, you water it. If you like a flower, you pick it"
 
 ## Class presentation
 https://docs.google.com/presentation/d/19uH6tVmigcuRI_kBoR44FBpYwTqt6qNChfNLtPsJkhM/edit?usp=sharing
