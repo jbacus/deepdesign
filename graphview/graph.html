@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
+            background-color: yellow;
         }
 
         #network {
@@ -106,43 +106,31 @@
                     var edgeData = data.edges;
 
                     let index = 0;
-                    let existingNodeIds = new Set(); // Track existing node IDs
-
-                    // Log the node and edge data for debugging
-                    console.log("Loaded node data:", nodeData);
-                    console.log("Loaded edge data:", edgeData);
 
                     // Function to add nodes and their connecting edges one by one
                     function addNodeAndEdgesOneByOne() {
                         if (index < nodeData.length) {
                             let currentNode = nodeData[index];
 
-                            // Check for duplicate node IDs before adding
-                            if (existingNodeIds.has(currentNode.id)) {
-                                console.error(`Duplicate node id found: ${currentNode.id}`);
-                                index++;
-                                return; // Skip this node if it's a duplicate
-                            }
+                            // Add the current node incrementally
+                            nodes.add(currentNode);
+                            console.log(`Node added: ${currentNode.id}`);
 
-                            existingNodeIds.add(currentNode.id);  // Add to the set of existing node ids
-                            nodes.add(currentNode);  // Add one node at a time
-                            console.log(`Node added: ${currentNode.id}`);  // Log each node addition
-
-                            // Find and add edges connected to this node
-                            let connectedEdges = edgeData.filter(edge => 
+                            // Add edges connected to this node
+                            let connectedEdges = edgeData.filter(edge =>
                                 edge.from === currentNode.id || edge.to === currentNode.id
                             );
 
-                            // Add edges related to this node
                             if (connectedEdges.length > 0) {
                                 edges.add(connectedEdges);
-                                console.log(`Edges added for node ${currentNode.id}:`, connectedEdges);  // Log edge additions
+                                console.log(`Edges added for node ${currentNode.id}:`, connectedEdges);
                             }
 
                             index++;
-                            setTimeout(addNodeAndEdgesOneByOne, 200);  // Slightly increase delay for visibility
+                            // Use requestAnimationFrame instead of setTimeout for smoother animation
+                            requestAnimationFrame(addNodeAndEdgesOneByOne);
                         } else {
-                            // Once all nodes and edges are added, fit the graph to the screen
+                            // Fit the graph once all nodes and edges are added
                             console.log("All nodes and edges added. Fitting the graph...");
                             network.fit({
                                 animation: {
