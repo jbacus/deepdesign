@@ -28,10 +28,10 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js with smaller initial zoom
+        // Default configuration options for Vis.js with proper zoom and physics handling
         var defaultOptions = {
             physics: {
-                enabled: true, // Let physics handle stabilization naturally
+                enabled: true,
                 solver: 'barnesHut',
                 barnesHut: {
                     gravitationalConstant: -2000,
@@ -41,7 +41,7 @@
                     damping: 0.3
                 },
                 stabilization: {
-                    enabled: true, // Let the physics engine stabilize naturally
+                    enabled: true,
                     iterations: 1000,
                     updateInterval: 50
                 },
@@ -93,27 +93,9 @@
                     roundness: 1
                 }
             },
-            // Here we set the initial zoom and zoom limits
-            manipulation: {
-                enabled: true
-            },
-            configure: {
-                enabled: true
-            },
-            interaction: {
-                navigationButtons: true,
-                keyboard: true
-            },
-            autoResize: true,
-            layout: {
-                improvedLayout: true
-            },
-            physics: true,
-            // Zoom control here
-            zoomView: true,
+            // Zoom control
             minZoom: 0.2, // Minimum zoom level (20% of the normal size)
             maxZoom: 2.0, // Maximum zoom level (200% of the normal size)
-            initialZoomLevel: 0.1 // Start the graph at 50% zoom (smaller than usual)
         };
 
         // Load the graph data from a JSON file and apply the configuration options
@@ -152,6 +134,19 @@
 
                         if (index < nodeData.length) {
                             requestAnimationFrame(loadBatch);
+                        } else {
+                            // After all data is loaded, fit and apply the initial zoom level
+                            network.fit();
+                            setTimeout(() => {
+                                network.moveTo({
+                                    position: { x: 0, y: 0 },
+                                    scale: 0.5,  // Start at 50% zoom
+                                    animation: {
+                                        duration: 500,
+                                        easingFunction: 'easeInOutQuad'
+                                    }
+                                });
+                            }, 500); // Give time for the physics to stabilize
                         }
                     }
 
