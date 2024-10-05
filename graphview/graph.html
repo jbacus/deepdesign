@@ -16,47 +16,168 @@
     </style>
 </head>
 <body>
+    <h1>Obsidian Graph Visualization with Configurable Options</h1>
     <div id="network"></div>
 
     <script>
-        // Fetch the graph data from the generated JSON file
-        fetch('graph_data.json')
-            .then(response => response.json())
-            .then(data => {
-                var nodes = new vis.DataSet(data.nodes);
-                var edges = new vis.DataSet(data.edges);
-    
-                var container = document.getElementById('network');
-                var graphData = {
-                    nodes: nodes,
-                    edges: edges
-                };
-                var options = {
-                    nodes: {
-                        shape: 'dot',
-                        size: 10,
-                        font: {
-                            size: 16,
-                            color: 'black'
-                        },
-                        borderWidth: 2,
-                        color: {
-                            border: 'black',
-                            background: 'white',
-                        }
+        // Default configuration options for Vis.js
+        var defaultOptions = {
+            physics: {
+                enabled: true, // Physics simulation for dynamic interaction
+                solver: 'barnesHut', // Physics solver for node placement
+                barnesHut: {
+                    gravitationalConstant: -2000, // Gravity between nodes
+                    centralGravity: 0.3, // Pull towards center
+                    springLength: 200, // Distance between connected nodes
+                    springConstant: 0.04 // Strength of connection between nodes
+                },
+                stabilization: {
+                    iterations: 1000, // Number of iterations for stabilization
+                    updateInterval: 25 // Time between updates in ms
+                }
+            },
+            interaction: {
+                hover: true, // Enable hover effects
+                tooltipDelay: 300, // Delay before showing tooltips
+                zoomView: true // Enable zooming in and out
+            },
+            nodes: {
+                shape: 'dot', // Default shape of the nodes
+                size: 20, // Default size of the nodes
+                color: {
+                    border: '#2B7CE9',
+                    background: '#97C2FC',
+                    highlight: {
+                        border: '#2B7CE9',
+                        background: '#D2E5FF'
                     },
-                    edges: {
-                        width: 2,
-                        color: {
-                            color: 'black',
-                            highlight: 'orange',
-                            hover: 'red',
-                        }
+                    hover: {
+                        border: '#2B7CE9',
+                        background: '#D2E5FF'
                     }
-                };
-    
-                var network = new vis.Network(container, graphData, options);
+                },
+                font: {
+                    color: '#343434',
+                    size: 14, // Default font size
+                    face: 'Tahoma', // Font face for node labels
+                    strokeWidth: 0, // No stroke around the text
+                    strokeColor: '#ffffff' // Optional text stroke color
+                },
+                borderWidth: 2, // Border width around nodes
+                shadow: {
+                    enabled: true, // Shadow effect on nodes
+                    color: 'rgba(0,0,0,0.5)',
+                    size: 10,
+                    x: 5,
+                    y: 5
+                }
+            },
+            edges: {
+                width: 2, // Default edge width
+                color: {
+                    color: '#848484',
+                    highlight: '#848484',
+                    hover: '#848484',
+                    opacity: 0.8
+                },
+                arrows: {
+                    to: { enabled: true, scaleFactor: 0.5 }, // Arrows on the edges
+                },
+                smooth: {
+                    type: 'dynamic', // Smooth curved edges
+                    roundness: 0.5 // Adjust curvature
+                },
+                shadow: {
+                    enabled: true, // Shadow on edges
+                    color: 'rgba(0,0,0,0.5)',
+                    size: 5,
+                    x: 2,
+                    y: 2
+                }
+            }
+        };
+
+        // Load the graph data from a JSON file and apply the configuration options
+        function loadGraphWithOptions(configOptions) {
+            fetch('graph_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    var nodes = new vis.DataSet(data.nodes);
+                    var edges = new vis.DataSet(data.edges);
+
+                    var container = document.getElementById('network');
+                    var graphData = {
+                        nodes: nodes,
+                        edges: edges
+                    };
+
+                    // Merge user-defined options with the default options
+                    var mergedOptions = { ...defaultOptions, ...configOptions };
+
+                    // Create the network with the merged options
+                    var network = new vis.Network(container, graphData, mergedOptions);
+
+                    // Disable physics after stabilization for better performance
+                    network.on('stabilized', function () {
+                        network.setOptions({ physics: false });
+                    });
+
+                    // Setup clustering and lazy loading
+                    setupClustering(network);
+                    setupLazyLoading(network);
+                })
+                .catch(error => console.error('Error loading graph data:', error));
+        }
+
+        // Setup clustering to simplify large graphs
+        function setupClustering(network) {
+            network.clusterByHubsize();
+
+            network.on('doubleClick', function (params) {
+                if (params.nodes.length > 0) {
+                    network.openCluster(params.nodes[0]);
+                }
             });
+        }
+
+        // Setup lazy loading to load more nodes on demand
+        function setupLazyLoading(network) {
+            network.on('zoom', function (params) {
+                if (params.scale > 1.5) {
+                    loadMoreNodes(network);
+                }
+            });
+
+            network.on('selectNode', function (params) {
+                if (params.nodes.length > 0) {
+                    loadMoreNodes(network, params.nodes[0]);
+                }
+            });
+        }
+
+        // Simulate loading more nodes (can be modified to load dynamically from a file or API)
+        function loadMoreNodes(network, selectedNodeId) {
+            var moreNodes = new vis.DataSet([
+                { id: 6, label: 'New Node 1' },
+                { id: 7, label: 'New Node 2' }
+            ]);
+
+            var moreEdges = new vis.DataSet([
+                { from: 4, to: 6 },
+                { from: 5, to: 7 }
+            ]);
+
+            network.body.data.nodes.add(moreNodes);
+            network.body.data.edges.add(moreEdges);
+
+            network.setOptions({ physics: true });
+            network.once('stabilized', function () {
+                network.setOptions({ physics: false });
+            });
+        }
+
+        // Load the graph with the default configuration on page load
+        loadGraphWithOptions({});
     </script>
 </body>
 </html>
