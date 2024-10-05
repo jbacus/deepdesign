@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Graph Visualization with Progress Bar</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
-        /* Ensure the graph canvas fills the entire browser window */
+        /* Set the size of the graph canvas and background color */
         body, html {
             margin: 0;
             padding: 0;
@@ -14,16 +15,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: 'white';
+            background-color: 'white'';
         }
 
         #network {
             width: 100vw; /* Fill the entire viewport width */
             height: 100vh; /* Fill the entire viewport height */
         }
+
+        /* Progress bar container */
+        #progress-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            background-color: #ddd;
+            border-radius: 10px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Progress bar itself */
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: 'orange'';
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
+    <!-- Progress bar -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Graph canvas -->
     <div id="network"></div>
 
     <script>
@@ -81,14 +112,20 @@
                     opacity: 1.0 // Fully opaque
                 },
                 arrows: {
-                    to: { enabled: true, scaleFactor: 1 } // Arrows on the edges
+                    to: { enabled: true, scaleFactor: 0.5 } // Arrows on the edges
                 },
                 smooth: {
                     type: 'dynamic', // Smooth curved edges
-                    roundness: 1 // Adjust curvature
+                    roundness: 2 // Adjust curvature
                 }
             }
         };
+
+        // Function to update the progress bar
+        function updateProgressBar(percent) {
+            var progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = percent + '%';
+        }
 
         // Load the graph data from a JSON file and apply the configuration options
         function loadGraphWithOptions(configOptions) {
@@ -109,6 +146,18 @@
 
                     // Create the network with the merged options
                     var network = new vis.Network(container, graphData, mergedOptions);
+
+                    // Track progress during stabilization
+                    network.on('stabilizationProgress', function (params) {
+                        var progress = Math.round((params.iterations / params.total) * 100);
+                        updateProgressBar(progress);
+                    });
+
+                    // Once the graph is stabilized, hide the progress bar
+                    network.once('stabilizationIterationsDone', function () {
+                        updateProgressBar(100); // Set to 100% completion
+                        document.getElementById('progress-container').style.display = 'none'; // Hide the progress bar
+                    });
 
                     // Disable physics after stabilization for better performance
                     network.on('stabilized', function () {
