@@ -15,44 +15,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: 'white''; /* White background */
+            background-color: white; /* Fixed the background color */
         }
 
         #network {
             width: 100vw; /* Fill the entire viewport width */
             height: 100vh; /* Fill the entire viewport height */
         }
-
-      /* Progress bar container */
- /*        #progress-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50%;
-            background-color: #ddd;
-            border-radius: 10px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }  */
-
-        /* Progress bar itself */
-     /*    #progress-bar {
-            width: 0%;
-            height: 100%;
-            background-color: 'orange';
-            border-radius: 20px;
-        }  */
     </style>
 </head>
 <body>
-   <!-- Progress bar -->
- <!--    <div id="progress-container">
-        <div id="progress-bar"></div>
-    </div> -->
 
     <!-- Graph canvas -->
     <div id="network"></div>
@@ -121,12 +93,6 @@
             }
         };
 
-       /*  // Function to update the progress bar
-        function updateProgressBar(percent) {
-            var progressBar = document.getElementById('progress-bar');
-            progressBar.style.width = percent + '%';
-        } */
-
         // Load the graph data from a JSON file and apply the configuration options
         function loadLargeGraphWithTimeout(configOptions) {
             fetch('graph_data.json')
@@ -154,17 +120,12 @@
                                 edges.add(edgeData[i]);
                             }
                         }
-                        /* // Update progress bar
-                        var progress = Math.round((index / nodeData.length) * 10);
-                        updateProgressBar(progress); */
 
                         // Increment index and call loadBatch again if more data is left
                         index += batchSize;
                         if (index < nodeData.length) {
                             setTimeout(loadBatch, 0); // Yield control to the browser
                         } else {
-                            //updateProgressBar(10);  // Set to 100% when done
-                            //document.getElementById('progress-container').style.display = 'none';  // Hide progress bar
                             network.fit();  // Fit the network to the container after loading
                         }
                     }
