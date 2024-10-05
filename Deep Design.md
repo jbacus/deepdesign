@@ -1,6 +1,6 @@
 ![](https://lh7-us.googleusercontent.com/7o5wwrY6CnSvF8gNVysXItL6b7j3Uxug8V9Bi7LZN91-YV4MzUmWmXw2CGp7SLS95Nj9dfPfvtnRElCoI1RfW2ottf-pM71IBieX4GkrBmbPiJaOgCWhutzXiYLOXPInDBahP3BPZ67R5U445gzA0dMdvA=s2048)
 ----
-This is a garden for farming ideas related to design, design practice, design pedagogy, and a critique of "Design Thinking" in the age of generative tartificial intelligence. This is a hot mess, with big chunks still moving around all the time. You've been warned.
+This is a garden for farming ideas related to design, design practice, design pedagogy, and a critique of "Design Thinking" in the age of generative artificial intelligence. This is a hot mess, with big chunks still moving around all the time. You've been warned.
 
 New ways of thinking, or newly considered old ways of thinking, are required.
 
