@@ -28,7 +28,7 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js with proper zoom and physics handling
+        // Default configuration options for Vis.js with physics enabled and stabilization
         var defaultOptions = {
             physics: {
                 enabled: true,
@@ -93,9 +93,8 @@
                     roundness: 1
                 }
             },
-            // Zoom control
-            minZoom: 0.2, // Minimum zoom level (20% of the normal size)
-            maxZoom: 2.0, // Maximum zoom level (200% of the normal size)
+            minZoom: 0.2,
+            maxZoom: 2.0,
         };
 
         // Load the graph data from a JSON file and apply the configuration options
@@ -118,7 +117,6 @@
                     var index = 0;
 
                     function loadBatch() {
-                        // Use smaller batches towards the end of loading to avoid heavy recalculations
                         var batchSize = index < nodeData.length * 0.8 ? initialBatchSize : smallBatchSize;
 
                         // Add a batch of nodes and edges to the graph
@@ -135,18 +133,25 @@
                         if (index < nodeData.length) {
                             requestAnimationFrame(loadBatch);
                         } else {
-                            // After all data is loaded, fit and apply the initial zoom level
-                            network.fit();
+                            // After all data is loaded, fit the graph to ensure it fits the screen
+                            network.fit({
+                                animation: {
+                                    duration: 500,
+                                    easingFunction: 'easeInOutQuad'
+                                }
+                            });
+
+                            // Apply initial zoom level after fitting
                             setTimeout(() => {
                                 network.moveTo({
                                     position: { x: 0, y: 0 },
-                                    scale: 0.5,  // Start at 50% zoom
+                                    scale: 0.8,  // Adjust the scale to ensure the graph is smaller
                                     animation: {
                                         duration: 500,
                                         easingFunction: 'easeInOutQuad'
                                     }
                                 });
-                            }, 500); // Give time for the physics to stabilize
+                            }, 600); // Give time for physics stabilization before zooming
                         }
                     }
 
