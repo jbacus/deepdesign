@@ -2,7 +2,7 @@ import re
 import json
 import os
 
-vault_dir = '/path/to/your/obsidian/vault'
+vault_dir = '/'
 graph_data = {"nodes": [], "edges": []}
 node_id = 1
 node_map = {}
