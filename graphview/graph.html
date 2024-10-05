@@ -28,7 +28,7 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js with physics enabled and no forced stabilization
+        // Default configuration options for Vis.js with physics enabled and stabilization
         var defaultOptions = {
             physics: {
                 enabled: true, // Let physics handle stabilization naturally
@@ -42,8 +42,9 @@
                 },
                 stabilization: {
                     enabled: true, // Let the physics engine stabilize naturally
-                    iterations: 1000,
+                    iterations: 1000, // Ensure enough iterations for smooth stabilization
                     updateInterval: 50, // Longer interval to allow gradual stabilization
+                    fit: true // Automatically fit during stabilization
                 },
                 maxVelocity: 50,
                 timestep: 0.5
@@ -129,17 +130,22 @@
                         // Increment index and load the next batch
                         index += batchSize;
 
-                        // Perform the final fit only at the end of loading, not during every batch
                         if (index < nodeData.length) {
+                            // Schedule the next batch of nodes/edges
                             requestAnimationFrame(loadBatch);
                         } else {
-                            // Fit the graph once all data has been loaded
-                            network.fit({
-                                animation: {
-                                    duration: 1000, // Final smooth animation
-                                    easingFunction: 'easeInOutQuad'
-                                }
-                            });
+                            // Once all data is loaded, stabilize the graph and fit it properly
+                            network.stabilize(100); // Stabilize with 100 iterations to avoid jitter
+                            setTimeout(() => {
+                                network.fit({
+                                    animation: {
+                                        duration: 1000, // Final smooth animation
+                                        easingFunction: 'easeInOutQuad'
+                                    }
+                                });
+                                // Disable physics after fitting the graph to prevent movement
+                                network.setOptions({ physics: false });
+                            }, 500); // Delay to allow stabilization to complete before final fitting
                         }
                     }
 
