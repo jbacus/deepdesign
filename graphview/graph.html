@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obsidian Graph Visualization</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
-        /* Set the size of the graph canvas and background color */
         body, html {
             margin: 0;
             padding: 0;
@@ -15,12 +13,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white; /* White background */
+            background-color: white;
         }
 
         #network {
-            width: 100vw; /* Fill the entire viewport width */
-            height: 100vh; /* Fill the entire viewport height */
+            width: 100vw;
+            height: 100vh;
         }
     </style>
 </head>
@@ -30,65 +28,68 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js
+        // Default configuration options for Vis.js with tweaked physics settings
         var defaultOptions = {
             physics: {
                 enabled: true, // Physics simulation for dynamic interaction
                 solver: 'barnesHut', // Physics solver for node placement
                 barnesHut: {
-                    gravitationalConstant: -2000, // Gravity between nodes
-                    centralGravity: 0.3, // Pull towards center
-                    springLength: 200, // Distance between connected nodes
-                    springConstant: 0.04 // Strength of connection between nodes
+                    gravitationalConstant: -2000,
+                    centralGravity: 0.3,
+                    springLength: 200,
+                    springConstant: 0.04,
+                    damping: 0.3 // Damping to slow down movements
                 },
                 stabilization: {
-                    iterations: 1000, // Number of iterations for stabilization
-                    updateInterval: 25 // Time between updates in ms
-                }
+                    iterations: 200, // Stabilize quickly but not instantly
+                    updateInterval: 25 // Update the layout every 25ms
+                },
+                maxVelocity: 50, // Limit velocity to avoid too fast movements
+                timestep: 0.5 // Slow down the time between physics ticks for smooth animation
             },
             interaction: {
-                hover: true, // Enable hover effects
-                tooltipDelay: 300, // Delay before showing tooltips
-                zoomView: true // Enable zooming in and out
+                hover: true,
+                tooltipDelay: 300,
+                zoomView: true
             },
             nodes: {
-                shape: 'dot', // Default shape of the nodes
-                size: 10, // Default size of the nodes
+                shape: 'dot',
+                size: 10,
                 color: {
-                    border: '#000000', // Black border
-                    background: '#000000', // Black background
+                    border: '#000000',
+                    background: '#000000',
                     highlight: {
-                        border: '#FFA500', // Orange border on hover/selection
-                        background: '#FFA500' // Orange background on hover/selection
+                        border: '#FFA500',
+                        background: '#FFA500'
                     },
                     hover: {
-                        border: '#FFA500', // Orange border on hover
-                        background: '#FFA500' // Orange background on hover
+                        border: '#FFA500',
+                        background: '#FFA500'
                     }
                 },
                 font: {
-                    color: '#808080', // Set text color to gray
-                    size: 14, // Default font size
-                    face: 'Helvetica', // Font set to Helvetica
-                    strokeWidth: 0, // No stroke around the text
-                    strokeColor: '#ffffff' // Optional text stroke color
+                    color: '#808080',
+                    size: 14,
+                    face: 'Helvetica',
+                    strokeWidth: 0,
+                    strokeColor: '#ffffff'
                 },
-                borderWidth: 3 // Border width around nodes
+                borderWidth: 3
             },
             edges: {
-                width: 2, // Default edge width
+                width: 2,
                 color: {
-                    color: '#000000', // Black edges
-                    highlight: '#FFA500', // Orange edges on hover/selection
-                    hover: '#FFA500', // Orange edges on hover
-                    opacity: 1.0 // Fully opaque
+                    color: '#000000',
+                    highlight: '#FFA500',
+                    hover: '#FFA500',
+                    opacity: 1.0
                 },
                 arrows: {
-                    to: { enabled: true, scaleFactor: 1 } // Arrows on the edges
+                    to: { enabled: true, scaleFactor: 1 }
                 },
                 smooth: {
-                    type: 'dynamic', // Smooth curved edges
-                    roundness: 1 // Adjust curvature
+                    type: 'dynamic',
+                    roundness: 1
                 }
             }
         };
@@ -106,14 +107,13 @@
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    // Simulate loading the nodes and edges in smaller chunks with setTimeout()
                     var nodeData = data.nodes;
                     var edgeData = data.edges;
-                    var batchSize = 10;  // Load 10 nodes/edges at a time for smoother animation
+                    var batchSize = 5;  // Load 5 nodes/edges at a time for smoother animation
                     var index = 0;
 
                     function loadBatch() {
-                        // Add a batch of nodes and edges to the graph
+                        // Add a small batch of nodes and edges to the graph
                         for (var i = index; i < Math.min(index + batchSize, nodeData.length); i++) {
                             nodes.add(nodeData[i]);
                             if (edgeData[i]) {
@@ -121,23 +121,23 @@
                             }
                         }
 
-                        // Fit the graph after each batch
+                        // Fit the graph progressively as it loads
                         network.fit({
                             animation: {
-                                duration: 200, // 200ms animation for the fitting process
+                                duration: 200,
                                 easingFunction: 'easeInOutQuad'
                             }
                         });
 
-                        // Increment index and call loadBatch again if more data is left
+                        // Increment index and schedule the next batch using requestAnimationFrame
                         index += batchSize;
                         if (index < nodeData.length) {
-                            setTimeout(loadBatch, 50); // Yield control to the browser, 50ms delay for smoother updates
+                            requestAnimationFrame(loadBatch); // Use requestAnimationFrame for smoother rendering
                         } else {
-                            // Ensure the final fit of the graph when all nodes/edges are loaded
+                            // Final fit after all data has been loaded
                             network.fit({
                                 animation: {
-                                    duration: 500, // Final fit with a longer animation duration
+                                    duration: 500,
                                     easingFunction: 'easeInOutQuad'
                                 }
                             });
@@ -153,7 +153,7 @@
         // Delay rendering to ensure the container is ready
         setTimeout(() => {
             loadLargeGraphWithTimeout(defaultOptions);
-        }, 100); // 100ms delay
+        }, 100);
     </script>
 </body>
 </html>
