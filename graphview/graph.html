@@ -95,14 +95,14 @@
             },
             // Here we set the initial zoom and zoom limits
             manipulation: {
-                enabled: false
+                enabled: true
             },
             configure: {
-                enabled: false
+                enabled: true
             },
             interaction: {
-                navigationButtons: false,
-                keyboard: false
+                navigationButtons: true,
+                keyboard: true
             },
             autoResize: true,
             layout: {
@@ -113,7 +113,7 @@
             zoomView: true,
             minZoom: 0.2, // Minimum zoom level (20% of the normal size)
             maxZoom: 2.0, // Maximum zoom level (200% of the normal size)
-            initialZoomLevel: 0.5 // Start the graph at 50% zoom (smaller than usual)
+            initialZoomLevel: 0.1 // Start the graph at 50% zoom (smaller than usual)
         };
 
         // Load the graph data from a JSON file and apply the configuration options
