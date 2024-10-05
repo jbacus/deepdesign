@@ -28,10 +28,10 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js with physics enabled and stabilization
+        // Simplified default configuration options for Vis.js
         var defaultOptions = {
             physics: {
-                enabled: true,
+                enabled: true,  // Let physics handle the stabilization
                 solver: 'barnesHut',
                 barnesHut: {
                     gravitationalConstant: -2000,
@@ -44,14 +44,10 @@
                     enabled: true,
                     iterations: 1000,
                     updateInterval: 50
-                },
-                maxVelocity: 50,
-                timestep: 0.5
+                }
             },
             interaction: {
-                hover: true,
-                tooltipDelay: 300,
-                zoomView: true
+                zoomView: true,  // Enable zoom and pan
             },
             nodes: {
                 shape: 'dot',
@@ -71,9 +67,7 @@
                 font: {
                     color: '#808080',
                     size: 14,
-                    face: 'Helvetica',
-                    strokeWidth: 0,
-                    strokeColor: '#ffffff'
+                    face: 'Helvetica'
                 },
                 borderWidth: 3
             },
@@ -82,8 +76,7 @@
                 color: {
                     color: '#000000',
                     highlight: '#FFA500',
-                    hover: '#FFA500',
-                    opacity: 1.0
+                    hover: '#FFA500'
                 },
                 arrows: {
                     to: { enabled: true, scaleFactor: 1 }
@@ -98,72 +91,34 @@
         };
 
         // Load the graph data from a JSON file and apply the configuration options
-        function loadLargeGraphWithTimeout(configOptions) {
+        function loadGraph(configOptions) {
             fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
-                    var nodes = new vis.DataSet();
-                    var edges = new vis.DataSet();
+                    var nodes = new vis.DataSet(data.nodes);  // Load all nodes at once
+                    var edges = new vis.DataSet(data.edges);  // Load all edges at once
 
                     var container = document.getElementById('network');
                     var graphData = { nodes: nodes, edges: edges };
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    var nodeData = data.nodes;
-                    var edgeData = data.edges;
-                    var initialBatchSize = 20;  // Start with larger batches
-                    var smallBatchSize = 5;  // Use smaller batches towards the end
-                    var index = 0;
-
-                    function loadBatch() {
-                        var batchSize = index < nodeData.length * 0.8 ? initialBatchSize : smallBatchSize;
-
-                        // Add a batch of nodes and edges to the graph
-                        for (var i = index; i < Math.min(index + batchSize, nodeData.length); i++) {
-                            nodes.add(nodeData[i]);
-                            if (edgeData[i]) {
-                                edges.add(edgeData[i]);
+                    // Ensure the graph fits the screen after it stabilizes
+                    network.once('stabilizationIterationsDone', function () {
+                        network.fit({
+                            animation: {
+                                duration: 500,
+                                easingFunction: 'easeInOutQuad'
                             }
-                        }
-
-                        // Increment index and load the next batch
-                        index += batchSize;
-
-                        if (index < nodeData.length) {
-                            requestAnimationFrame(loadBatch);
-                        } else {
-                            // After all data is loaded, fit the graph to ensure it fits the screen
-                            network.fit({
-                                animation: {
-                                    duration: 500,
-                                    easingFunction: 'easeInOutQuad'
-                                }
-                            });
-
-                            // Apply initial zoom level after fitting
-                            setTimeout(() => {
-                                network.moveTo({
-                                    position: { x: 0, y: 0 },
-                                    scale: 0.8,  // Adjust the scale to ensure the graph is smaller
-                                    animation: {
-                                        duration: 500,
-                                        easingFunction: 'easeInOutQuad'
-                                    }
-                                });
-                            }, 600); // Give time for physics stabilization before zooming
-                        }
-                    }
-
-                    // Start loading data in batches
-                    loadBatch();
+                        });
+                    });
                 })
                 .catch(error => console.error('Error loading graph data:', error));
         }
 
         // Delay rendering to ensure the container is ready
         setTimeout(() => {
-            loadLargeGraphWithTimeout(defaultOptions);
+            loadGraph(defaultOptions);
         }, 100);
     </script>
 </body>
