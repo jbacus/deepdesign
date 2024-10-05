@@ -9,9 +9,9 @@
         /* Set the size of the graph canvas */
         #network {
             width: 100%;
-            height: 1000px;
+            height: 600px;
             border: 1px solid lightgray;
-            background-color: thistle;
+            background-color: cornflowerblue;
         }
     </style>
 </head>
@@ -20,122 +20,131 @@
     <div id="network"></div>
 
     <script>
-        // Initialize the network variable to store the graph
-        var network;
+        // Function to load the graph data from JSON
+        function loadGraphFromJson() {
+            // Fetch the JSON data
+            fetch('graph_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Load nodes and edges from the fetched data
+                    var nodes = new vis.DataSet(data.nodes);
+                    var edges = new vis.DataSet(data.edges);
 
-        // Function to load the initial graph data with a subset of nodes (Lazy Loading)
-        function loadInitialGraph() {
-            var initialNodes = new vis.DataSet([
-                { id: 1, label: 'Home' },
-                { id: 2, label: 'Project A' },
-                { id: 3, label: 'Project B' }
-            ]);
+                    // Container for the graph visualization
+                    var container = document.getElementById('network');
 
-            var initialEdges = new vis.DataSet([
-                { from: 1, to: 2 },
-                { from: 1, to: 3 }
-            ]);
+                    // Define the data for the network
+                    var graphData = {
+                        nodes: nodes,
+                        edges: edges
+                    };
 
-            var container = document.getElementById('network');
-            var data = {
-                nodes: initialNodes,
-                edges: initialEdges
-            };
+                    // Define the options for the network visualization
+                    var options = {
+                        physics: {
+                            enabled: true, // Enable physics for initial layout
+                            solver: 'barnesHut', // Fast physics solver
+                            stabilization: {
+                                iterations: 500, // Limit iterations for stabilization
+                                updateInterval: 50
+                            }
+                        },
+                        interaction: {
+                            hover: false, // Disable hover for performance
+                            zoomView: true // Allow zooming
+                        },
+                        nodes: {
+                            shape: 'dot',
+                            size: 20,
+                            font: {
+                                size: 14,
+                                color: '#ffffff'
+                            },
+                            borderWidth: 2,
+                            color: {
+                                border: '#222222',
+                                background: '#666666'
+                            }
+                        },
+                        edges: {
+                            width: 2,
+                            color: '#848484'
+                        }
+                    };
 
-            var options = {
-                physics: {
-                    enabled: true, // Physics is enabled initially for stabilization
-                    solver: 'barnesHut', // Use a fast physics solver
-                    stabilization: {
-                        iterations: 500, // Limit the number of iterations to speed up stabilization
-                        updateInterval: 50
-                    }
-                },
-                interaction: {
-                    hover: false, // Disable hover events for performance
-                    zoomView: true // Enable zoom view for interaction
-                },
-                nodes: {
-                    shape: 'dot',
-                    size: 20,
-                    font: {
-                        size: 14,
-                        color: '#ffffff'
-                    },
-                    borderWidth: 2,
-                    color: {
-                        border: '#222222',
-                        background: '#666666'
-                    }
-                },
-                edges: {
-                    width: 2,
-                    color: '#848484'
-                }
-            };
+                    // Create the network visualization
+                    var network = new vis.Network(container, graphData, options);
 
-            network = new vis.Network(container, data, options);
+                    // When the network stabilizes, turn off physics for better performance
+                    network.on('stabilized', function () {
+                        network.setOptions({ physics: false });
+                    });
 
-            // When stabilization is complete, disable physics to reduce load
-            network.on('stabilized', function() {
-                network.setOptions({ physics: false });
-            });
-
-            // Set up clustering
-            setupClustering(network);
-
-            // Set up event listeners for lazy loading more nodes and edges
-            network.on('zoom', function(params) {
-                if (params.scale > 1.5) {
-                    loadMoreNodes();
-                }
-            });
-
-            network.on('selectNode', function(params) {
-                if (params.nodes.length > 0) {
-                    loadMoreNodes(params.nodes[0]);
-                }
-            });
+                    // Set up clustering and lazy loading
+                    setupClustering(network);
+                    setupLazyLoading(network);
+                })
+                .catch(error => {
+                    console.error('Error loading the graph data:', error);
+                });
         }
 
-        // Function to load more nodes and edges dynamically (Lazy Loading)
-        function loadMoreNodes(selectedNodeId) {
-            var moreNodes = new vis.DataSet([
-                { id: 4, label: 'Note 1' },
-                { id: 5, label: 'Note 2' }
-            ]);
-
-            var moreEdges = new vis.DataSet([
-                { from: 2, to: 4 },
-                { from: 2, to: 5 }
-            ]);
-
-            // Add more nodes and edges to the network
-            network.body.data.nodes.add(moreNodes);
-            network.body.data.edges.add(moreEdges);
-
-            // Optionally, re-enable physics temporarily to re-stabilize the network
-            network.setOptions({ physics: true });
-            network.once('stabilized', function() {
-                network.setOptions({ physics: false });
-            });
-        }
-
-        // Function to set up clustering to reduce node rendering load
+        // Function to set up clustering
         function setupClustering(network) {
-            // Cluster all nodes based on hub size (highly connected nodes will be clustered)
+            // Cluster nodes by their hub size to reduce initial complexity
             network.clusterByHubsize();
 
-            // Enable expanding clusters on double click
-            network.on('doubleClick', function(params) {
+            // Allow users to expand clusters by double-clicking on them
+            network.on('doubleClick', function (params) {
                 if (params.nodes.length > 0) {
                     network.openCluster(params.nodes[0]);
                 }
             });
         }
 
-        // Load the initial graph when the page loads
-        loadInitialGraph();
+        // Function to set up lazy loading
+        function setupLazyLoading(network) {
+            // Add event listener for zooming in to load more nodes
+            network.on('zoom', function (params) {
+                if (params.scale > 1.5) {
+                    loadMoreNodes(network);
+                }
+            });
+
+            // Add event listener for selecting nodes to load related nodes
+            network.on('selectNode', function (params) {
+                if (params.nodes.length > 0) {
+                    loadMoreNodes(network, params.nodes[0]);
+                }
+            });
+        }
+
+        // Function to load additional nodes and edges (lazy loading)
+        function loadMoreNodes(network, selectedNodeId) {
+            // Simulate loading more nodes and edges (for real data, fetch from a source)
+            var moreNodes = new vis.DataSet([
+                { id: 6, label: 'New Node 1' },
+                { id: 7, label: 'New Node 2' }
+            ]);
+
+            var moreEdges = new vis.DataSet([
+                { from: 4, to: 6 },
+                { from: 5, to: 7 }
+            ]);
+
+            // Add the newly loaded nodes and edges to the network
+            network.body.data.nodes.add(moreNodes);
+            network.body.data.edges.add(moreEdges);
+
+            // Re-enable physics temporarily to stabilize the added nodes
+            network.setOptions({ physics: true });
+            network.once('stabilized', function () {
+                network.setOptions({ physics: false });
+            });
+        }
+
+        // Load the graph data and initialize the network when the page loads
+        loadGraphFromJson();
     </script>
 </body>
 </html>
