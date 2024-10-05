@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Graph Visualization</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        /* Set the size of the graph canvas */
+        #network {
+            width: 100%;
+            height: 500px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graph Visualization of Obsidian Notes</h1>
+    <div id="network"></div>
+
+<script>
+    // Fetch the graph data from the generated JSON file
+    fetch('graph_data.json')
+        .then(response => response.json())
+        .then(data => {
+            var nodes = new vis.DataSet(data.nodes);
+            var edges = new vis.DataSet(data.edges);
+
+            var container = document.getElementById('network');
+            var graphData = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: 'dot',
+                    size: 20,
+                    font: {
+                        size: 16,
+                        color: '#ffffff'
+                    },
+                    borderWidth: 2,
+                    color: {
+                        border: '#222222',
+                        background: '#666666'
+                    }
+                },
+                edges: {
+                    width: 2,
+                    color: {
+                        color: '#848484',
+                        highlight: '#848484',
+                        hover: '#848484'
+                    }
+                }
+            };
+
+            var network = new vis.Network(container, graphData, options);
+        });
+</script>
+    
+</body>
+</html>
