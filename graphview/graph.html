@@ -28,7 +28,7 @@
     <div id="network"></div>
 
     <script>
-        // Default configuration options for Vis.js with physics enabled and stabilization
+        // Default configuration options for Vis.js with smaller initial zoom
         var defaultOptions = {
             physics: {
                 enabled: true, // Let physics handle stabilization naturally
@@ -38,13 +38,12 @@
                     centralGravity: 0.3,
                     springLength: 200,
                     springConstant: 0.04,
-                    damping: 0.3 // Damping to slow down movements
+                    damping: 0.3
                 },
                 stabilization: {
                     enabled: true, // Let the physics engine stabilize naturally
-                    iterations: 1000, // Ensure enough iterations for smooth stabilization
-                    updateInterval: 50, // Longer interval to allow gradual stabilization
-                    fit: true // Automatically fit during stabilization
+                    iterations: 1000,
+                    updateInterval: 50
                 },
                 maxVelocity: 50,
                 timestep: 0.5
@@ -93,7 +92,28 @@
                     type: 'dynamic',
                     roundness: 1
                 }
-            }
+            },
+            // Here we set the initial zoom and zoom limits
+            manipulation: {
+                enabled: false
+            },
+            configure: {
+                enabled: false
+            },
+            interaction: {
+                navigationButtons: false,
+                keyboard: false
+            },
+            autoResize: true,
+            layout: {
+                improvedLayout: true
+            },
+            physics: true,
+            // Zoom control here
+            zoomView: true,
+            minZoom: 0.2, // Minimum zoom level (20% of the normal size)
+            maxZoom: 2.0, // Maximum zoom level (200% of the normal size)
+            initialZoomLevel: 0.5 // Start the graph at 50% zoom (smaller than usual)
         };
 
         // Load the graph data from a JSON file and apply the configuration options
@@ -131,21 +151,7 @@
                         index += batchSize;
 
                         if (index < nodeData.length) {
-                            // Schedule the next batch of nodes/edges
                             requestAnimationFrame(loadBatch);
-                        } else {
-                            // Once all data is loaded, stabilize the graph and fit it properly
-                            network.stabilize(100); // Stabilize with 100 iterations to avoid jitter
-                            setTimeout(() => {
-                                network.fit({
-                                    animation: {
-                                        duration: 1000, // Final smooth animation
-                                        easingFunction: 'easeInOutQuad'
-                                    }
-                                });
-                                // Disable physics after fitting the graph to prevent movement
-                                network.setOptions({ physics: false });
-                            }, 500); // Delay to allow stabilization to complete before final fitting
                         }
                     }
 
