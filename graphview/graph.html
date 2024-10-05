@@ -143,7 +143,7 @@
                     // Simulate loading the nodes and edges in chunks with setTimeout()
                     var nodeData = data.nodes;
                     var edgeData = data.edges;
-                    var batchSize = 100;  // Load 100 nodes/edges at a time
+                    var batchSize = 10;  // Load 10 nodes/edges at a time
                     var index = 0;
 
                     function loadBatch() {
@@ -155,7 +155,7 @@
                             }
                         }
                         // Update progress bar
-                        var progress = Math.round((index / nodeData.length) * 100);
+                        var progress = Math.round((index / nodeData.length) * 10);
                         updateProgressBar(progress);
 
                         // Increment index and call loadBatch again if more data is left
