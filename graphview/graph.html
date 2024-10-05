@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: yellow;
+            background-color: white;
         }
 
         #network {
@@ -89,60 +89,28 @@
             }
         };
 
-        // Load the graph data and add nodes and edges incrementally
-        function loadGraphIncrementally(configOptions) {
+        // Load the entire graph at once and apply configuration
+        function loadGraph(configOptions) {
             fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
-                    var nodes = new vis.DataSet();
-                    var edges = new vis.DataSet();
+                    var nodes = new vis.DataSet(data.nodes);  // Load all nodes at once
+                    var edges = new vis.DataSet(data.edges);  // Load all edges at once
 
                     var container = document.getElementById('network');
                     var graphData = { nodes: nodes, edges: edges };
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    var nodeData = data.nodes;
-                    var edgeData = data.edges;
-
-                    let index = 0;
-
-                    // Function to add nodes and their connecting edges one by one
-                    function addNodeAndEdgesOneByOne() {
-                        if (index < nodeData.length) {
-                            let currentNode = nodeData[index];
-
-                            // Add the current node incrementally
-                            nodes.add(currentNode);
-                            console.log(`Node added: ${currentNode.id}`);
-
-                            // Add edges connected to this node
-                            let connectedEdges = edgeData.filter(edge =>
-                                edge.from === currentNode.id || edge.to === currentNode.id
-                            );
-
-                            if (connectedEdges.length > 0) {
-                                edges.add(connectedEdges);
-                                console.log(`Edges added for node ${currentNode.id}:`, connectedEdges);
+                    // Fit the graph to the screen after it stabilizes
+                    network.once('stabilizationIterationsDone', function () {
+                        network.fit({
+                            animation: {
+                                duration: 500,
+                                easingFunction: 'easeInOutQuad'
                             }
-
-                            index++;
-                            // Use requestAnimationFrame instead of setTimeout for smoother animation
-                            requestAnimationFrame(addNodeAndEdgesOneByOne);
-                        } else {
-                            // Fit the graph once all nodes and edges are added
-                            console.log("All nodes and edges added. Fitting the graph...");
-                            network.fit({
-                                animation: {
-                                    duration: 500,
-                                    easingFunction: 'easeInOutQuad'
-                                }
-                            });
-                        }
-                    }
-
-                    // Start adding nodes and their connected edges one by one
-                    addNodeAndEdgesOneByOne();
+                        });
+                    });
                 })
                 .catch(error => {
                     console.error('Error loading graph data:', error);
@@ -151,7 +119,7 @@
 
         // Delay rendering to ensure the container is ready
         setTimeout(() => {
-            loadGraphIncrementally(defaultOptions);
+            loadGraph(defaultOptions);
         }, 100);
     </script>
 </body>
