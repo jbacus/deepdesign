@@ -113,53 +113,6 @@
                 .catch(error => console.error('Error loading graph data:', error));
         }
 
-        // Setup clustering to simplify large graphs
-        function setupClustering(network) {
-            network.clusterByHubsize();
-
-            network.on('doubleClick', function (params) {
-                if (params.nodes.length > 0) {
-                    network.openCluster(params.nodes[0]);
-                }
-            });
-        }
-
-        // Setup lazy loading to load more nodes on demand
-        function setupLazyLoading(network) {
-            network.on('zoom', function (params) {
-                if (params.scale > 1.5) {
-                    loadMoreNodes(network);
-                }
-            });
-
-            network.on('selectNode', function (params) {
-                if (params.nodes.length > 0) {
-                    loadMoreNodes(network, params.nodes[0]);
-                }
-            });
-        }
-
-        // Simulate loading more nodes (can be modified to load dynamically from a file or API)
-        function loadMoreNodes(network, selectedNodeId) {
-            var moreNodes = new vis.DataSet([
-                { id: 6, label: 'New Node 1' },
-                { id: 7, label: 'New Node 2' }
-            ]);
-
-            var moreEdges = new vis.DataSet([
-                { from: 4, to: 6 },
-                { from: 5, to: 7 }
-            ]);
-
-            network.body.data.nodes.add(moreNodes);
-            network.body.data.edges.add(moreEdges);
-
-            network.setOptions({ physics: true });
-            network.once('stabilized', function () {
-                network.setOptions({ physics: false });
-            });
-        }
-
         // Load the graph with the default configuration on page load
         loadGraphWithOptions({});
     </script>
