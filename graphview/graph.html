@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Graph Visualization</title>
+    <title>Obsidian Graph Visualization with Configurable Options</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
-        /* Set the size of the graph canvas */
+        /* Set the size of the graph canvas and background color */
+        body {
+            background-color: thistle;
+        }
+
         #network {
             width: 100%;
-            height: 1000px;
+            height: 600px;
             border: 1px solid lightgray;
-            background-color: thistle;
         }
     </style>
 </head>
 <body>
+    <h1>Obsidian Graph Visualization with Configurable Options</h1>
     <div id="network"></div>
 
     <script>
@@ -42,42 +46,43 @@
             },
             nodes: {
                 shape: 'dot', // Default shape of the nodes
-                size: 10, // Default size of the nodes
+                size: 20, // Default size of the nodes
                 color: {
-                    border: 'black',
-                    background: 'white',
+                    border: '#000000', // Black border
+                    background: '#000000', // Black background
                     highlight: {
-                        border: 'orange',
-                        background: 'orange'
+                        border: '#FFA500', // Orange border on hover/selection
+                        background: '#FFA500' // Orange background on hover/selection
                     },
                     hover: {
-                        border: 'red',
-                        background: 'red'
+                        border: '#FFA500', // Orange border on hover
+                        background: '#FFA500' // Orange background on hover
                     }
                 },
                 font: {
-                    color: 'gray',
-                    size: 10, // Default font size
-                    face: 'Helvetica', // Font face for node labels
+                    color: '#808080', // Set text color to gray (#808080)
+                    size: 14, // Default font size
+                    face: 'Helvetica', // Font set to Helvetica
+                    strokeWidth: 0, // No stroke around the text
+                    strokeColor: '#ffffff' // Optional text stroke color
                 },
-                borderWidth: 4, // Border width around nodes
-              
+                borderWidth: 2 // Border width around nodes
             },
             edges: {
                 width: 2, // Default edge width
                 color: {
-                    color: 'black',
-                    highlight: 'orange',
-                    hover: 'red',
+                    color: '#000000', // Black edges
+                    highlight: '#FFA500', // Orange edges on hover/selection
+                    hover: '#FFA500', // Orange edges on hover
+                    opacity: 1.0 // Fully opaque
                 },
                 arrows: {
-                    to: { enabled: true, scaleFactor: 1 }, // Arrows on the edges
+                    to: { enabled: true, scaleFactor: 0.5 } // Arrows on the edges
                 },
                 smooth: {
                     type: 'dynamic', // Smooth curved edges
-                    roundness: 1 // Adjust curvature
-                },
-                
+                    roundness: 0.5 // Adjust curvature
+                }
             }
         };
 
@@ -105,16 +110,14 @@
                     network.on('stabilized', function () {
                         network.setOptions({ physics: false });
                     });
-
-                    // Setup clustering and lazy loading
-                    setupClustering(network);
-                    setupLazyLoading(network);
                 })
                 .catch(error => console.error('Error loading graph data:', error));
         }
 
-        // Load the graph with the default configuration on page load
-        loadGraphWithOptions({});
+        // Delay rendering to ensure the container is ready
+        setTimeout(() => {
+            loadGraphWithOptions({});
+        }, 100); // 100ms delay
     </script>
 </body>
 </html>
