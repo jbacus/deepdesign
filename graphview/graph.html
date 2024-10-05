@@ -49,10 +49,10 @@
     </style>
 </head>
 <body>
-    <!-- Progress bar -->
+    <!-- <!-- Progress bar -->
     <div id="progress-container">
         <div id="progress-bar"></div>
-    </div>
+    </div> -->
 
     <!-- Graph canvas -->
     <div id="network"></div>
@@ -121,11 +121,11 @@
             }
         };
 
-        // Function to update the progress bar
+       /*  // Function to update the progress bar
         function updateProgressBar(percent) {
             var progressBar = document.getElementById('progress-bar');
             progressBar.style.width = percent + '%';
-        }
+        } */
 
         // Load the graph data from a JSON file and apply the configuration options
         function loadLargeGraphWithTimeout(configOptions) {
@@ -154,18 +154,18 @@
                                 edges.add(edgeData[i]);
                             }
                         }
-                        // Update progress bar
+                        /* // Update progress bar
                         var progress = Math.round((index / nodeData.length) * 10);
-                        updateProgressBar(progress);
+                        updateProgressBar(progress); */
 
                         // Increment index and call loadBatch again if more data is left
                         index += batchSize;
                         if (index < nodeData.length) {
                             setTimeout(loadBatch, 0); // Yield control to the browser
                         } else {
-                            updateProgressBar(10);  // Set to 100% when done
-                            document.getElementById('progress-container').style.display = 'none';  // Hide progress bar
-                            network.fit();  // Fit the network to the container after loading
+                            //updateProgressBar(10);  // Set to 100% when done
+                            //document.getElementById('progress-container').style.display = 'none';  // Hide progress bar
+                            //network.fit();  // Fit the network to the container after loading
                         }
                     }
 
