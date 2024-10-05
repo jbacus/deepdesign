@@ -20,131 +20,44 @@
     <div id="network"></div>
 
     <script>
-        // Function to load the graph data from JSON
-        function loadGraphFromJson() {
-            // Fetch the JSON data
-            fetch('graph_data.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Load nodes and edges from the fetched data
-                    var nodes = new vis.DataSet(data.nodes);
-                    var edges = new vis.DataSet(data.edges);
-
-                    // Container for the graph visualization
-                    var container = document.getElementById('network');
-
-                    // Define the data for the network
-                    var graphData = {
-                        nodes: nodes,
-                        edges: edges
-                    };
-
-                    // Define the options for the network visualization
-                    var options = {
-                        physics: {
-                            enabled: true, // Enable physics for initial layout
-                            solver: 'barnesHut', // Fast physics solver
-                            stabilization: {
-                                iterations: 500, // Limit iterations for stabilization
-                                updateInterval: 50
-                            }
+        // Fetch the graph data from the generated JSON file
+        fetch('graph_data.json')
+            .then(response => response.json())
+            .then(data => {
+                var nodes = new vis.DataSet(data.nodes);
+                var edges = new vis.DataSet(data.edges);
+    
+                var container = document.getElementById('network');
+                var graphData = {
+                    nodes: nodes,
+                    edges: edges
+                };
+                var options = {
+                    nodes: {
+                        shape: 'dot',
+                        size: 20,
+                        font: {
+                            size: 16,
+                            color: '#ffffff'
                         },
-                        interaction: {
-                            hover: false, // Disable hover for performance
-                            zoomView: true // Allow zooming
-                        },
-                        nodes: {
-                            shape: 'dot',
-                            size: 20,
-                            font: {
-                                size: 14,
-                                color: '#ffffff'
-                            },
-                            borderWidth: 2,
-                            color: {
-                                border: '#222222',
-                                background: '#666666'
-                            }
-                        },
-                        edges: {
-                            width: 2,
-                            color: '#848484'
+                        borderWidth: 2,
+                        color: {
+                            border: '#222222',
+                            background: '#666666'
                         }
-                    };
-
-                    // Create the network visualization
-                    var network = new vis.Network(container, graphData, options);
-
-                    // When the network stabilizes, turn off physics for better performance
-                    network.on('stabilized', function () {
-                        network.setOptions({ physics: false });
-                    });
-
-                    // Set up clustering and lazy loading
-                    setupClustering(network);
-                    setupLazyLoading(network);
-                })
-                .catch(error => {
-                    console.error('Error loading the graph data:', error);
-                });
-        }
-
-        // Function to set up clustering
-        function setupClustering(network) {
-            // Cluster nodes by their hub size to reduce initial complexity
-            network.clusterByHubsize();
-
-            // Allow users to expand clusters by double-clicking on them
-            network.on('doubleClick', function (params) {
-                if (params.nodes.length > 0) {
-                    network.openCluster(params.nodes[0]);
-                }
+                    },
+                    edges: {
+                        width: 2,
+                        color: {
+                            color: '#848484',
+                            highlight: '#848484',
+                            hover: '#848484'
+                        }
+                    }
+                };
+    
+                var network = new vis.Network(container, graphData, options);
             });
-        }
-
-        // Function to set up lazy loading
-        function setupLazyLoading(network) {
-            // Add event listener for zooming in to load more nodes
-            network.on('zoom', function (params) {
-                if (params.scale > 1.5) {
-                    loadMoreNodes(network);
-                }
-            });
-
-            // Add event listener for selecting nodes to load related nodes
-            network.on('selectNode', function (params) {
-                if (params.nodes.length > 0) {
-                    loadMoreNodes(network, params.nodes[0]);
-                }
-            });
-        }
-
-        // Function to load additional nodes and edges (lazy loading)
-        function loadMoreNodes(network, selectedNodeId) {
-            // Simulate loading more nodes and edges (for real data, fetch from a source)
-            var moreNodes = new vis.DataSet([
-                { id: 6, label: 'New Node 1' },
-                { id: 7, label: 'New Node 2' }
-            ]);
-
-            var moreEdges = new vis.DataSet([
-                { from: 4, to: 6 },
-                { from: 5, to: 7 }
-            ]);
-
-            // Add the newly loaded nodes and edges to the network
-            network.body.data.nodes.add(moreNodes);
-            network.body.data.edges.add(moreEdges);
-
-            // Re-enable physics temporarily to stabilize the added nodes
-            network.setOptions({ physics: true });
-            network.once('stabilized', function () {
-                network.setOptions({ physics: false });
-            });
-        }
-
-        // Load the graph data and initialize the network when the page loads
-        loadGraphFromJson();
     </script>
 </body>
 </html>
