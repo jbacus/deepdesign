@@ -15,12 +15,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: 'white'';
+            background-color: thistle;
         }
 
         #network {
             width: 100vw; /* Fill the entire viewport width */
             height: 100vh; /* Fill the entire viewport height */
+            border: 1px solid lightgray;
         }
 
         /* Progress bar container */
@@ -43,7 +44,7 @@
         #progress-bar {
             width: 0%;
             height: 100%;
-            background-color: 'orange'';
+            background-color: #4CAF50;
             border-radius: 10px;
         }
     </style>
@@ -81,7 +82,7 @@
             },
             nodes: {
                 shape: 'dot', // Default shape of the nodes
-                size: 10, // Default size of the nodes
+                size: 20, // Default size of the nodes
                 color: {
                     border: '#000000', // Black border
                     background: '#000000', // Black background
@@ -104,7 +105,7 @@
                 borderWidth: 2 // Border width around nodes
             },
             edges: {
-                width: 3, // Default edge width
+                width: 2, // Default edge width
                 color: {
                     color: '#000000', // Black edges
                     highlight: '#FFA500', // Orange edges on hover/selection
@@ -116,7 +117,7 @@
                 },
                 smooth: {
                     type: 'dynamic', // Smooth curved edges
-                    roundness: 2 // Adjust curvature
+                    roundness: 0.5 // Adjust curvature
                 }
             }
         };
@@ -128,53 +129,56 @@
         }
 
         // Load the graph data from a JSON file and apply the configuration options
-        function loadGraphWithOptions(configOptions) {
+        function loadLargeGraphWithTimeout(configOptions) {
             fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
-                    var nodes = new vis.DataSet(data.nodes);
-                    var edges = new vis.DataSet(data.edges);
+                    var nodes = new vis.DataSet();
+                    var edges = new vis.DataSet();
 
                     var container = document.getElementById('network');
-                    var graphData = {
-                        nodes: nodes,
-                        edges: edges
-                    };
+                    var graphData = { nodes: nodes, edges: edges };
 
-                    // Merge user-defined options with the default options
-                    var mergedOptions = { ...defaultOptions, ...configOptions };
+                    var network = new vis.Network(container, graphData, configOptions);
 
-                    // Create the network with the merged options
-                    var network = new vis.Network(container, graphData, mergedOptions);
+                    // Simulate loading the nodes and edges in chunks with setTimeout()
+                    var nodeData = data.nodes;
+                    var edgeData = data.edges;
+                    var batchSize = 100;  // Load 100 nodes/edges at a time
+                    var index = 0;
 
-                    // Track progress during stabilization
-                    network.on('stabilizationProgress', function (params) {
-                        var progress = Math.round((params.iterations / params.total) * 100);
+                    function loadBatch() {
+                        // Add a batch of nodes and edges to the graph
+                        for (var i = index; i < Math.min(index + batchSize, nodeData.length); i++) {
+                            nodes.add(nodeData[i]);
+                            if (edgeData[i]) {
+                                edges.add(edgeData[i]);
+                            }
+                        }
+                        // Update progress bar
+                        var progress = Math.round((index / nodeData.length) * 100);
                         updateProgressBar(progress);
-                    });
 
-                    // Once the graph is stabilized, hide the progress bar
-                    network.once('stabilizationIterationsDone', function () {
-                        updateProgressBar(100); // Set to 100% completion
-                        document.getElementById('progress-container').style.display = 'none'; // Hide the progress bar
-                    });
+                        // Increment index and call loadBatch again if more data is left
+                        index += batchSize;
+                        if (index < nodeData.length) {
+                            setTimeout(loadBatch, 0); // Yield control to the browser
+                        } else {
+                            updateProgressBar(100);  // Set to 100% when done
+                            document.getElementById('progress-container').style.display = 'none';  // Hide progress bar
+                            network.fit();  // Fit the network to the container after loading
+                        }
+                    }
 
-                    // Disable physics after stabilization for better performance
-                    network.on('stabilized', function () {
-                        network.setOptions({ physics: false });
-                    });
-
-                    // Resize the network when the window is resized
-                    window.onresize = function() {
-                        network.fit();
-                    };
+                    // Start loading data in batches
+                    loadBatch();
                 })
                 .catch(error => console.error('Error loading graph data:', error));
         }
 
         // Delay rendering to ensure the container is ready
         setTimeout(() => {
-            loadGraphWithOptions({});
+            loadLargeGraphWithTimeout(defaultOptions);
         }, 100); // 100ms delay
     </script>
 </body>
