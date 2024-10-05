@@ -16,7 +16,6 @@
     </style>
 </head>
 <body>
-    <h1>Obsidian Graph Visualization with Configurable Options</h1>
     <div id="network"></div>
 
     <script>
@@ -43,42 +42,33 @@
             },
             nodes: {
                 shape: 'dot', // Default shape of the nodes
-                size: 20, // Default size of the nodes
+                size: 10, // Default size of the nodes
                 color: {
-                    border: '#2B7CE9',
-                    background: '#97C2FC',
+                    border: 'black',
+                    background: 'white',
                     highlight: {
-                        border: '#2B7CE9',
-                        background: '#D2E5FF'
+                        border: 'orange',
+                        background: 'orange'
                     },
                     hover: {
-                        border: '#2B7CE9',
-                        background: '#D2E5FF'
+                        border: 'red',
+                        background: 'red'
                     }
                 },
                 font: {
-                    color: '#343434',
-                    size: 14, // Default font size
-                    face: 'Tahoma', // Font face for node labels
-                    strokeWidth: 0, // No stroke around the text
-                    strokeColor: '#ffffff' // Optional text stroke color
+                    color: 'gray',
+                    size: 10, // Default font size
+                    face: 'Helvetica', // Font face for node labels
                 },
                 borderWidth: 2, // Border width around nodes
-                shadow: {
-                    enabled: false, // Shadow effect on nodes
-                    color: 'rgba(0,0,0,0.5)',
-                    size: 10,
-                    x: 5,
-                    y: 5
-                }
+              
             },
             edges: {
                 width: 2, // Default edge width
                 color: {
-                    color: '#848484',
-                    highlight: '#848484',
-                    hover: '#848484',
-                    opacity: 0.8
+                    color: 'black',
+                    highlight: 'orange',
+                    hover: 'red',
                 },
                 arrows: {
                     to: { enabled: true, scaleFactor: 0.5 }, // Arrows on the edges
@@ -87,13 +77,7 @@
                     type: 'dynamic', // Smooth curved edges
                     roundness: 0.5 // Adjust curvature
                 },
-                shadow: {
-                    enabled: false, // Shadow on edges
-                    color: 'rgba(0,0,0,0.5)',
-                    size: 5,
-                    x: 2,
-                    y: 2
-                }
+                
             }
         };
 
