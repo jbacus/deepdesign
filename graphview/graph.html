@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
+            background-color: yellow;
         }
 
         #network {
@@ -28,11 +28,10 @@
     <div id="network"></div>
 
     <script>
-        // Simplified default configuration options for Vis.js
+        // Basic configuration options for Vis.js
         var defaultOptions = {
             physics: {
                 enabled: true,
-                solver: 'barnesHut',
                 barnesHut: {
                     gravitationalConstant: -2000,
                     centralGravity: 0.3,
@@ -48,6 +47,8 @@
             },
             interaction: {
                 zoomView: true,
+                minZoom: 0.2,
+                maxZoom: 2.0
             },
             nodes: {
                 shape: 'dot',
@@ -85,9 +86,7 @@
                     type: 'dynamic',
                     roundness: 1
                 }
-            },
-            minZoom: 0.2,
-            maxZoom: 2.0,
+            }
         };
 
         // Load the graph data and add nodes and edges incrementally
@@ -107,6 +106,7 @@
                     var edgeData = data.edges;
 
                     let index = 0;
+                    let existingNodeIds = new Set(); // Track existing node IDs
 
                     // Log the node and edge data for debugging
                     console.log("Loaded node data:", nodeData);
@@ -116,6 +116,15 @@
                     function addNodeAndEdgesOneByOne() {
                         if (index < nodeData.length) {
                             let currentNode = nodeData[index];
+
+                            // Check for duplicate node IDs before adding
+                            if (existingNodeIds.has(currentNode.id)) {
+                                console.error(`Duplicate node id found: ${currentNode.id}`);
+                                index++;
+                                return; // Skip this node if it's a duplicate
+                            }
+
+                            existingNodeIds.add(currentNode.id);  // Add to the set of existing node ids
                             nodes.add(currentNode);  // Add one node at a time
                             console.log(`Node added: ${currentNode.id}`);  // Log each node addition
 
