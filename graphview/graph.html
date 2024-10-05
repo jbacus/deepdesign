@@ -15,7 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white; /* Fixed the background color */
+            background-color: white; /* White background */
         }
 
         #network {
@@ -106,10 +106,10 @@
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    // Simulate loading the nodes and edges in chunks with setTimeout()
+                    // Simulate loading the nodes and edges in smaller chunks with setTimeout()
                     var nodeData = data.nodes;
                     var edgeData = data.edges;
-                    var batchSize = 100;  // Load 100 nodes/edges at a time
+                    var batchSize = 10;  // Load 10 nodes/edges at a time for smoother animation
                     var index = 0;
 
                     function loadBatch() {
@@ -121,12 +121,26 @@
                             }
                         }
 
+                        // Fit the graph after each batch
+                        network.fit({
+                            animation: {
+                                duration: 200, // 200ms animation for the fitting process
+                                easingFunction: 'easeInOutQuad'
+                            }
+                        });
+
                         // Increment index and call loadBatch again if more data is left
                         index += batchSize;
                         if (index < nodeData.length) {
-                            setTimeout(loadBatch, 0); // Yield control to the browser
+                            setTimeout(loadBatch, 50); // Yield control to the browser, 50ms delay for smoother updates
                         } else {
-                            network.fit();  // Fit the network to the container after loading
+                            // Ensure the final fit of the graph when all nodes/edges are loaded
+                            network.fit({
+                                animation: {
+                                    duration: 500, // Final fit with a longer animation duration
+                                    easingFunction: 'easeInOutQuad'
+                                }
+                            });
                         }
                     }
 
