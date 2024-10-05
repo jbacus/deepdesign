@@ -90,35 +90,56 @@
             maxZoom: 2.0,
         };
 
-        // Load the graph data from a JSON file and apply the configuration options
-        function loadGraph(configOptions) {
+        // Load the graph data and add nodes and edges incrementally
+        function loadGraphIncrementally(configOptions) {
             fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
-                    var nodes = new vis.DataSet(data.nodes);  // Load all nodes at once
-                    var edges = new vis.DataSet(data.edges);  // Load all edges at once
+                    var nodes = new vis.DataSet();
+                    var edges = new vis.DataSet();
 
                     var container = document.getElementById('network');
                     var graphData = { nodes: nodes, edges: edges };
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    // Ensure the graph fits the screen after it stabilizes
-                    network.once('stabilizationIterationsDone', function () {
-                        network.fit({
-                            animation: {
-                                duration: 500,
-                                easingFunction: 'easeInOutQuad'
-                            }
-                        });
-                    });
+                    var nodeData = data.nodes;
+                    var edgeData = data.edges;
+
+                    let index = 0;
+
+                    // Function to add nodes and their connecting edges one by one
+                    function addNodeAndEdgesOneByOne() {
+                        if (index < nodeData.length) {
+                            let currentNode = nodeData[index];
+                            nodes.add(currentNode);  // Add one node at a time
+
+                            // Find and add edges connected to this node
+                            let connectedEdges = edgeData.filter(edge => edge.from === currentNode.id || edge.to === currentNode.id);
+                            edges.add(connectedEdges);
+
+                            index++;
+                            setTimeout(addNodeAndEdgesOneByOne, 100);  // Delay between each node addition
+                        } else {
+                            // Once all nodes and edges are added, fit the graph to the screen
+                            network.fit({
+                                animation: {
+                                    duration: 500,
+                                    easingFunction: 'easeInOutQuad'
+                                }
+                            });
+                        }
+                    }
+
+                    // Start adding nodes and their connected edges one by one
+                    addNodeAndEdgesOneByOne();
                 })
                 .catch(error => console.error('Error loading graph data:', error));
         }
 
         // Delay rendering to ensure the container is ready
         setTimeout(() => {
-            loadGraph(defaultOptions);
+            loadGraphIncrementally(defaultOptions);
         }, 100);
     </script>
 </body>
