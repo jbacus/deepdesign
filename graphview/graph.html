@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Graph Visualization</title>
+    <title>Graph Visualization</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
         body, html {
@@ -28,21 +28,10 @@
     <div id="network"></div>
 
     <script>
-        // Basic configuration options for Vis.js with initial minimal physics to render graph quickly
+        // Configuration options for Vis.js with physics initially disabled
         var defaultOptions = {
             physics: {
-                enabled: true,  // Enable minimal physics for initial display
-                solver: 'barnesHut',
-                barnesHut: {
-                    gravitationalConstant: -500,  // Less gravity for quick rendering
-                    centralGravity: 0.3,
-                    springLength: 200,
-                    springConstant: 0.04,
-                    damping: 0.3
-                },
-                stabilization: {
-                    enabled: false  // Disable initial stabilization for immediate rendering
-                }
+                enabled: false,  // Initially disable physics for immediate rendering
             },
             interaction: {
                 zoomView: true,
@@ -88,26 +77,29 @@
             }
         };
 
-        // Load the graph, display it quickly, and then trigger full stabilization
+        // Load the graph and render it without physics initially
         function loadGraph(configOptions) {
-            fetch('graph_data.json')
+            fetch('graph_data.json')  // Load your graph data from a JSON file
                 .then(response => response.json())
                 .then(data => {
-                    var nodes = new vis.DataSet(data.nodes);  // Load all nodes at once
-                    var edges = new vis.DataSet(data.edges);  // Load all edges at once
+                    var nodes = new vis.DataSet(data.nodes);  // Load all nodes
+                    var edges = new vis.DataSet(data.edges);  // Load all edges
 
                     var container = document.getElementById('network');
                     var graphData = { nodes: nodes, edges: edges };
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    // After a delay, trigger full dynamic stabilization for a smoother layout
+                    // Display the graph immediately
+                    network.redraw();
+
+                    // After a delay, enable physics for dynamic stabilization
                     setTimeout(() => {
                         network.setOptions({
                             physics: {
-                                enabled: true,  // Re-enable full physics for stabilization
+                                enabled: true,  // Re-enable physics
                                 barnesHut: {
-                                    gravitationalConstant: -2000,  // More realistic gravity
+                                    gravitationalConstant: -2000,
                                     centralGravity: 0.3,
                                     springLength: 200,
                                     springConstant: 0.04,
@@ -120,9 +112,8 @@
                                 }
                             }
                         });
-
-                        network.stabilize();
-                    }, 500);  // Wait for 500ms before enabling full physics for stabilization
+                        network.stabilize();  // Trigger physics stabilization
+                    }, 500);  // Wait for 500ms before enabling physics
                 })
                 .catch(error => {
                     console.error('Error loading graph data:', error);
