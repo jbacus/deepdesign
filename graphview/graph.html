@@ -28,10 +28,21 @@
     <div id="network"></div>
 
     <script>
-        // Basic configuration options for Vis.js with physics initially disabled for immediate rendering
+        // Basic configuration options for Vis.js with initial minimal physics to render graph quickly
         var defaultOptions = {
             physics: {
-                enabled: false // Initially disable physics to display the graph immediately
+                enabled: true,  // Enable minimal physics for initial display
+                solver: 'barnesHut',
+                barnesHut: {
+                    gravitationalConstant: -500,  // Less gravity for quick rendering
+                    centralGravity: 0.3,
+                    springLength: 200,
+                    springConstant: 0.04,
+                    damping: 0.3
+                },
+                stabilization: {
+                    enabled: false  // Disable initial stabilization for immediate rendering
+                }
             },
             interaction: {
                 zoomView: true,
@@ -77,8 +88,8 @@
             }
         };
 
-        // Load the graph data and add nodes and edges incrementally
-        function loadGraphIncrementally(configOptions) {
+        // Load the graph, display it quickly, and then trigger full stabilization
+        function loadGraph(configOptions) {
             fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
@@ -90,59 +101,28 @@
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    var nodeData = data.nodes;
-                    var edgeData = data.edges;
-
-                    let index = 0;
-                    let existingNodeIds = new Set(); // Track existing node IDs
-
-                    // Log the node and edge data for debugging
-                    console.log("Loaded node data:", nodeData);
-                    console.log("Loaded edge data:", edgeData);
-
-                    // Function to add nodes and their connecting edges one by one
-                    function addNodeAndEdgesOneByOne() {
-                        if (index < nodeData.length) {
-                            let currentNode = nodeData[index];
-
-                            // Check for duplicate node IDs before adding
-                            if (existingNodeIds.has(currentNode.id)) {
-                                console.error(`Duplicate node id found: ${currentNode.id}`);
-                                index++;
-                                return; // Skip this node if it's a duplicate
-                            }
-
-                            existingNodeIds.add(currentNode.id);  // Add to the set of existing node ids
-                            nodes.add(currentNode);  // Add one node at a time
-                            console.log(`Node added: ${currentNode.id}`);  // Log each node addition
-
-                            // Find and add edges connected to this node
-                            let connectedEdges = edgeData.filter(edge => 
-                                edge.from === currentNode.id || edge.to === currentNode.id
-                            );
-
-                            // Add edges related to this node
-                            if (connectedEdges.length > 0) {
-                                edges.add(connectedEdges);
-                                console.log(`Edges added for node ${currentNode.id}:`, connectedEdges);  // Log edge additions
-                            }
-
-                            index++;
-                            setTimeout(addNodeAndEdgesOneByOne, 200);  // Slightly increase delay for visibility
-                        } else {
-                            // Once all nodes and edges are added, fit the graph to the screen
-                            console.log("All nodes and edges added. Fitting the graph...");
-                            network.fit({
-                                animation: {
-                                    duration: 500,
-                                    easingFunction: 'easeInOutQuad'
+                    // After a delay, trigger full dynamic stabilization for a smoother layout
+                    setTimeout(() => {
+                        network.setOptions({
+                            physics: {
+                                enabled: true,  // Re-enable full physics for stabilization
+                                barnesHut: {
+                                    gravitationalConstant: -2000,  // More realistic gravity
+                                    centralGravity: 0.3,
+                                    springLength: 200,
+                                    springConstant: 0.04,
+                                    damping: 0.3
+                                },
+                                stabilization: {
+                                    enabled: true,
+                                    iterations: 1000,
+                                    updateInterval: 50
                                 }
-                            });
-                        }
-                    }
+                            }
+                        });
 
-                    // Start adding nodes and their connected edges one by one
-                    addNodeAndEdgesOneByOne();
+                        network.stabilize();
+                    }, 500);  // Wait for 500ms before enabling full physics for stabilization
                 })
                 .catch(error => {
                     console.error('Error loading graph data:', error);
