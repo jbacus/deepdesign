@@ -28,10 +28,23 @@
     <div id="network"></div>
 
     <script>
-        // Configuration options for Vis.js with physics initially disabled
+        // Configuration options for Vis.js
         var defaultOptions = {
             physics: {
-                enabled: false,  // Initially disable physics for immediate rendering
+                enabled: true, // Enable physics from the start for smoother transitions
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    centralGravity: 0.3,
+                    springLength: 200,
+                    springConstant: 0.04,
+                    damping: 0.3
+                },
+                stabilization: {
+                    enabled: true, // Enable stabilization for incremental layout
+                    iterations: 200, // Fewer iterations per stabilization step
+                    updateInterval: 100, // Update more frequently
+                    fit: true // Fit the graph after each stabilization update
+                }
             },
             interaction: {
                 zoomView: true,
@@ -77,9 +90,9 @@
             }
         };
 
-        // Load the graph and render it without physics initially
+        // Load the graph and apply incremental stabilization
         function loadGraph(configOptions) {
-            fetch('graph_data.json')  // Load your graph data from a JSON file
+            fetch('graph_data.json')
                 .then(response => response.json())
                 .then(data => {
                     var nodes = new vis.DataSet(data.nodes);  // Load all nodes
@@ -90,30 +103,28 @@
 
                     var network = new vis.Network(container, graphData, configOptions);
 
-                    // Display the graph immediately
-                    network.redraw();
+                    // Ensure the graph is centered from the start
+                    network.fit();
 
-                    // After a delay, enable physics for dynamic stabilization
-                    setTimeout(() => {
-                        network.setOptions({
-                            physics: {
-                                enabled: true,  // Re-enable physics
-                                barnesHut: {
-                                    gravitationalConstant: -2000,
-                                    centralGravity: 0.3,
-                                    springLength: 200,
-                                    springConstant: 0.04,
-                                    damping: 0.3
-                                },
-                                stabilization: {
-                                    enabled: true,
-                                    iterations: 1000,
-                                    updateInterval: 50
-                                }
+                    // Listen to the stabilization progress and fit the network incrementally
+                    network.on('stabilizationProgress', function(params) {
+                        // Log stabilization progress for debugging
+                        console.log(`Stabilization progress: ${params.iterations} / ${params.total}`);
+
+                        // Fit the network view after each stabilization step
+                        network.fit();
+                    });
+
+                    // Once stabilization is done, ensure final fit
+                    network.once('stabilizationIterationsDone', function() {
+                        console.log('Stabilization completed');
+                        network.fit({
+                            animation: {
+                                duration: 500,
+                                easingFunction: 'easeInOutQuad'
                             }
                         });
-                        network.stabilize();  // Trigger physics stabilization
-                    }, 500);  // Wait for 500ms before enabling physics
+                    });
                 })
                 .catch(error => {
                     console.error('Error loading graph data:', error);
