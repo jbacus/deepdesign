@@ -6,6 +6,8 @@ When time permits, review your notes and see what further ideas are triggered. C
 
 [[Catching ideas is a habit]], and [[you need good habits]]. Be prepared to [[get up early and stay up late]]. Like most habits, having a way to measure provides a baseline and a way to judge how much you are improving. [[Ideaflow]] is one way to measure it. How fast can you make new ideas? How fast can you make new ideas as a team? Remove the filters, defer the critique, how much faster can you go?
 
+Cultivate an [[Idea Garden]]
+
 Followers of a practice of ideas show willingness to be surprised, willingness to be delighted. Also, willingness to be disapointed or even horrified. If we only want predictable outcomes, we will remain forever under the [[ATLAS/deepdesign/Documents/Tenets of Deep Design/Streetlight Problem|streetlight.]] We must [[Embrace indeterminacy|embrace indeterminacy]] and allow unexpected leaps to lead us somewhere… unexpected.
 
 Leonard Cohen said, “If I knew where all the good songs came from, I would go there more often.” Those experienced in the practice of ideas know how to be prepared when ideas swim by, and they know how to put themselves in the place where the ideas are quickly and efficiently. They don’t necessarily know where all the good songs are… but they know how to get there when they need to.

@@ -15,10 +15,18 @@ As Stewart Brand reminds us, ”[[We are as gods, and we might as well get good 
 
 Deep Design is not a linear process with a beginning and an end. Rather, it is a practice defined by nodes on the rich hyper-surface of daily human experience.
 
+1. [[Deep Design Embraces Incompleteness]]
+2. [[Deep Design Accepts Irreducibility]]
+3. [[Deep Design Refuses Closure]]
+4. [[Deep Design is Aware of the Undecidable]]
+5. [[Deep Design as Stochastic Performance]]
+
+
+
 ![[Tenets of Deep Design]]
 
 If we seek deeper levels of design, we approach root causes and we build stronger foundations for higher design opportunities. A tool for the exploration of deep design is [[the Five Whys]]. As a designer, begin by asking designing the thing below... five times.
 
-Design takes time to deepen, and it is appropriate to begin your practice anywhere. If you adhere to a particular design Thinking orthodoxy, your practice may deepen from successfully running your process again and again.
+Design takes time to deepen, and it is appropriate to begin your practice anywhere. If you adhere to a particular design Thinking orthodoxy, your practice may deepen from successfully running your process again, again, again, and again.
 
 Beware that Deep Design is a dangerous practice, a practice that brings wild innovation that threatens norms and existing power structures. [[Machiavelli]] and [[Literature Notes/Omnivore/2024-09-11/We Have a Creativity Problem - The New York Times|We Have a Creativity Problem - The New York Times]]

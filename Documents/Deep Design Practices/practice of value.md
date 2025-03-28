@@ -10,6 +10,9 @@ impact not value, purpose
 
 Civilizations with the a [[The Long Now|Long Now]] recognize deep value from [[pace layering]]
 
+Consider the proper pricing of things [[Van Westendorp Pricing Sensitivity Meter]]
+
+
 ## [[Design Thinking]]
 practice of value -> [[Lecture 4 - Define]]
 
